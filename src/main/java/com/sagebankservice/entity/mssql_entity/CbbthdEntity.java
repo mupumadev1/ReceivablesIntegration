@@ -7,17 +7,519 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Objects;
+
+@Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Entity
-@jakarta.persistence.Table(name = "CBBTHD", schema = "dbo", catalog = "TSTDAT")
-@IdClass(com.sagebankservice.entity.mssql_entity.CbbthdEntityPK.class)
-public class CbbthdEntity {
+@IdClass(CbbthdPK.class)
+public class Cbbthd {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "BATCHID")
+    @Column(name = "BATCHID", nullable = false, length = 6)
     private String batchid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "ENTRYNO", nullable = false, length = 5)
+    private String entryno;
+    @Basic
+    @Column(name = "AUDTDATE", nullable = false, precision = 0)
+    private int audtdate;
+    @Basic
+    @Column(name = "AUDTTIME", nullable = false, precision = 0)
+    private int audttime;
+    @Basic
+    @Column(name = "AUDTUSER", nullable = false, length = 8)
+    private String audtuser;
+    @Basic
+    @Column(name = "AUDTORG", nullable = false, length = 6)
+    private String audtorg;
+    @Basic
+    @Column(name = "ENTRYTYPE", nullable = false)
+    private short entrytype;
+    @Basic
+    @Column(name = "REFERENCE", nullable = false, length = 12)
+    private String reference;
+    @Basic
+    @Column(name = "PERIOD", nullable = false, length = 2)
+    private String period;
+    @Basic
+    @Column(name = "DATE", nullable = false, precision = 0)
+    private int date;
+    @Basic
+    @Column(name = "DATECHQPRN", nullable = false, precision = 0)
+    private int datechqprn;
+    @Basic
+    @Column(name = "SWCHQPRN", nullable = false)
+    private short swchqprn;
+    @Basic
+    @Column(name = "MISCCODE", nullable = false, length = 12)
+    private String misccode;
+    @Basic
+    @Column(name = "TEXTDESC", nullable = false, length = 60)
+    private String textdesc;
+    @Basic
+    @Column(name = "DISTCODE", nullable = false, length = 6)
+    private String distcode;
+    @Basic
+    @Column(name = "CHARGECODE", nullable = false, length = 2)
+    private String chargecode;
+    @Basic
+    @Column(name = "CHRGAMOUNT", nullable = false, precision = 3)
+    private BigDecimal chrgamount;
+    @Basic
+    @Column(name = "NODETAILS", nullable = false)
+    private int nodetails;
+    @Basic
+    @Column(name = "TOTAMOUNT", nullable = false, precision = 3)
+    private BigDecimal totamount;
+    @Basic
+    @Column(name = "TOTTAX", nullable = false, precision = 3)
+    private BigDecimal tottax;
+    @Basic
+    @Column(name = "TAXPERCNT", nullable = false, precision = 3)
+    private BigDecimal taxpercnt;
+    @Basic
+    @Column(name = "BK2GLCURHM", nullable = false, length = 3)
+    private String bk2Glcurhm;
+    @Basic
+    @Column(name = "BK2GLRTTYP", nullable = false, length = 2)
+    private String bk2Glrttyp;
+    @Basic
+    @Column(name = "BK2GLCURSR", nullable = false, length = 3)
+    private String bk2Glcursr;
+    @Basic
+    @Column(name = "BK2GLDATE", nullable = false, precision = 0)
+    private int bk2Gldate;
+    @Basic
+    @Column(name = "BK2GLRATE", nullable = false, precision = 7)
+    private BigDecimal bk2Glrate;
+    @Basic
+    @Column(name = "BK2GLSPRD", nullable = false, precision = 7)
+    private BigDecimal bk2Glsprd;
+    @Basic
+    @Column(name = "BK2GLOP", nullable = false)
+    private short bk2Glop;
+    @Basic
+    @Column(name = "BK2GLDTMTH", nullable = false)
+    private short bk2Gldtmth;
+    @Basic
+    @Column(name = "BT2GLCURHM", nullable = false, length = 3)
+    private String bt2Glcurhm;
+    @Basic
+    @Column(name = "BT2GLRTTYP", nullable = false, length = 2)
+    private String bt2Glrttyp;
+    @Basic
+    @Column(name = "BT2GLCURSR", nullable = false, length = 3)
+    private String bt2Glcursr;
+    @Basic
+    @Column(name = "BT2GLDATE", nullable = false, precision = 0)
+    private int bt2Gldate;
+    @Basic
+    @Column(name = "BT2GLRATE", nullable = false, precision = 7)
+    private BigDecimal bt2Glrate;
+    @Basic
+    @Column(name = "BT2GLSPRD", nullable = false, precision = 7)
+    private BigDecimal bt2Glsprd;
+    @Basic
+    @Column(name = "BT2GLOP", nullable = false)
+    private short bt2Glop;
+    @Basic
+    @Column(name = "BT2GLDTMTH", nullable = false)
+    private short bt2Gldtmth;
+    @Basic
+    @Column(name = "MS2GLCURHM", nullable = false, length = 3)
+    private String ms2Glcurhm;
+    @Basic
+    @Column(name = "MS2GLRTTYP", nullable = false, length = 2)
+    private String ms2Glrttyp;
+    @Basic
+    @Column(name = "MS2GLCURSR", nullable = false, length = 3)
+    private String ms2Glcursr;
+    @Basic
+    @Column(name = "MS2GLDATE", nullable = false, precision = 0)
+    private int ms2Gldate;
+    @Basic
+    @Column(name = "MS2GLRATE", nullable = false, precision = 7)
+    private BigDecimal ms2Glrate;
+    @Basic
+    @Column(name = "MS2GLSPRD", nullable = false, precision = 7)
+    private BigDecimal ms2Glsprd;
+    @Basic
+    @Column(name = "MS2GLOP", nullable = false)
+    private short ms2Glop;
+    @Basic
+    @Column(name = "MS2GLDTMTH", nullable = false)
+    private short ms2Gldtmth;
+    @Basic
+    @Column(name = "SWCASH", nullable = false)
+    private short swcash;
+    @Basic
+    @Column(name = "BTCHNODEC", nullable = false)
+    private short btchnodec;
+    @Basic
+    @Column(name = "MISCNODEC", nullable = false)
+    private short miscnodec;
+    @Basic
+    @Column(name = "TAXGROUP", nullable = false, length = 12)
+    private String taxgroup;
+    @Basic
+    @Column(name = "CUSTCHQNO", nullable = false, length = 24)
+    private String custchqno;
+    @Basic
+    @Column(name = "NOSUBDETL", nullable = false)
+    private int nosubdetl;
+    @Basic
+    @Column(name = "APPLAMOUNT", nullable = false, precision = 3)
+    private BigDecimal applamount;
+    @Basic
+    @Column(name = "APPLDISC", nullable = false, precision = 3)
+    private BigDecimal appldisc;
+    @Basic
+    @Column(name = "ACCTNAT", nullable = false, length = 12)
+    private String acctnat;
+    @Basic
+    @Column(name = "ADJAMOUNT", nullable = false, precision = 3)
+    private BigDecimal adjamount;
+    @Basic
+    @Column(name = "PROFILEID", nullable = false, length = 8)
+    private String profileid;
+    @Basic
+    @Column(name = "SWINTERCO", nullable = false)
+    private short swinterco;
+    @Basic
+    @Column(name = "FISCYR", nullable = false, length = 4)
+    private String fiscyr;
+    @Basic
+    @Column(name = "CCTYPE", nullable = false, length = 12)
+    private String cctype;
+    @Basic
+    @Column(name = "CCNUMBER", nullable = false)
+    private Object ccnumber;
+    @Basic
+    @Column(name = "CCNAME", nullable = false, length = 60)
+    private String ccname;
+    @Basic
+    @Column(name = "CCEXP", nullable = false, precision = 0)
+    private int ccexp;
+    @Basic
+    @Column(name = "CCAUTHCODE", nullable = false, length = 20)
+    private String ccauthcode;
+    @Basic
+    @Column(name = "XCCNUMBER", nullable = false, length = 32)
+    private String xccnumber;
+    @Basic
+    @Column(name = "SERIAL", nullable = false)
+    private int serial;
+    @Basic
+    @Column(name = "BANKAMOUNT", nullable = false, precision = 3)
+    private BigDecimal bankamount;
+    @Basic
+    @Column(name = "BTCHAMOUNT", nullable = false, precision = 3)
+    private BigDecimal btchamount;
+    @Basic
+    @Column(name = "MISCAMOUNT", nullable = false, precision = 3)
+    private BigDecimal miscamount;
+    @Basic
+    @Column(name = "FUNCAMOUNT", nullable = false, precision = 3)
+    private BigDecimal funcamount;
+    @Basic
+    @Column(name = "HDRDEBIT", nullable = false, precision = 3)
+    private BigDecimal hdrdebit;
+    @Basic
+    @Column(name = "HDRCREDIT", nullable = false, precision = 3)
+    private BigDecimal hdrcredit;
+    @Basic
+    @Column(name = "TAXAUTH1", nullable = false, length = 12)
+    private String taxauth1;
+    @Basic
+    @Column(name = "TAXAUTH2", nullable = false, length = 12)
+    private String taxauth2;
+    @Basic
+    @Column(name = "TAXAUTH3", nullable = false, length = 12)
+    private String taxauth3;
+    @Basic
+    @Column(name = "TAXAUTH4", nullable = false, length = 12)
+    private String taxauth4;
+    @Basic
+    @Column(name = "TAXAUTH5", nullable = false, length = 12)
+    private String taxauth5;
+    @Basic
+    @Column(name = "TXAU1DESC", nullable = false, length = 60)
+    private String txau1Desc;
+    @Basic
+    @Column(name = "TXAU2DESC", nullable = false, length = 60)
+    private String txau2Desc;
+    @Basic
+    @Column(name = "TXAU3DESC", nullable = false, length = 60)
+    private String txau3Desc;
+    @Basic
+    @Column(name = "TXAU4DESC", nullable = false, length = 60)
+    private String txau4Desc;
+    @Basic
+    @Column(name = "TXAU5DESC", nullable = false, length = 60)
+    private String txau5Desc;
+    @Basic
+    @Column(name = "TAXCLASS1", nullable = false)
+    private short taxclass1;
+    @Basic
+    @Column(name = "TAXCLASS2", nullable = false)
+    private short taxclass2;
+    @Basic
+    @Column(name = "TAXCLASS3", nullable = false)
+    private short taxclass3;
+    @Basic
+    @Column(name = "TAXCLASS4", nullable = false)
+    private short taxclass4;
+    @Basic
+    @Column(name = "TAXCLASS5", nullable = false)
+    private short taxclass5;
+    @Basic
+    @Column(name = "BASETAX1", nullable = false, precision = 3)
+    private BigDecimal basetax1;
+    @Basic
+    @Column(name = "BASETAX2", nullable = false, precision = 3)
+    private BigDecimal basetax2;
+    @Basic
+    @Column(name = "BASETAX3", nullable = false, precision = 3)
+    private BigDecimal basetax3;
+    @Basic
+    @Column(name = "BASETAX4", nullable = false, precision = 3)
+    private BigDecimal basetax4;
+    @Basic
+    @Column(name = "BASETAX5", nullable = false, precision = 3)
+    private BigDecimal basetax5;
+    @Basic
+    @Column(name = "AMTTAX1", nullable = false, precision = 3)
+    private BigDecimal amttax1;
+    @Basic
+    @Column(name = "AMTTAX2", nullable = false, precision = 3)
+    private BigDecimal amttax2;
+    @Basic
+    @Column(name = "AMTTAX3", nullable = false, precision = 3)
+    private BigDecimal amttax3;
+    @Basic
+    @Column(name = "AMTTAX4", nullable = false, precision = 3)
+    private BigDecimal amttax4;
+    @Basic
+    @Column(name = "AMTTAX5", nullable = false, precision = 3)
+    private BigDecimal amttax5;
+    @Basic
+    @Column(name = "SWTAXINCL1", nullable = false)
+    private short swtaxincl1;
+    @Basic
+    @Column(name = "SWTAXINCL2", nullable = false)
+    private short swtaxincl2;
+    @Basic
+    @Column(name = "SWTAXINCL3", nullable = false)
+    private short swtaxincl3;
+    @Basic
+    @Column(name = "SWTAXINCL4", nullable = false)
+    private short swtaxincl4;
+    @Basic
+    @Column(name = "SWTAXINCL5", nullable = false)
+    private short swtaxincl5;
+    @Basic
+    @Column(name = "BANKCODE", nullable = false, length = 12)
+    private String bankcode;
+    @Basic
+    @Column(name = "SWPOSTED", nullable = false)
+    private short swposted;
+    @Basic
+    @Column(name = "VALUES", nullable = false)
+    private int values;
+    @Basic
+    @Column(name = "PROCESSCMD", nullable = false)
+    private short processcmd;
+    @Basic
+    @Column(name = "TOTUNAPPL", nullable = false, precision = 3)
+    private BigDecimal totunappl;
+    @Basic
+    @Column(name = "TOTAPPLAMT", nullable = false, precision = 3)
+    private BigDecimal totapplamt;
+    @Basic
+    @Column(name = "TOTAPPLDSC", nullable = false, precision = 3)
+    private BigDecimal totappldsc;
+    @Basic
+    @Column(name = "ALLOCMODE", nullable = false)
+    private short allocmode;
+    @Basic
+    @Column(name = "ALLOCAMT", nullable = false, precision = 3)
+    private BigDecimal allocamt;
+    @Basic
+    @Column(name = "CLASSTYPE", nullable = false)
+    private short classtype;
+    @Basic
+    @Column(name = "CLASSAXIS", nullable = false)
+    private short classaxis;
+    @Basic
+    @Column(name = "DATALEVEL", nullable = false)
+    private short datalevel;
+    @Basic
+    @Column(name = "RECXCNTER", nullable = false)
+    private int recxcnter;
+    @Basic
+    @Column(name = "RATERC", nullable = false, precision = 7)
+    private BigDecimal raterc;
+    @Basic
+    @Column(name = "RATETYPERC", nullable = false, length = 2)
+    private String ratetyperc;
+    @Basic
+    @Column(name = "RATEOPRC", nullable = false)
+    private short rateoprc;
+    @Basic
+    @Column(name = "RATEDATERC", nullable = false, precision = 0)
+    private int ratedaterc;
+    @Basic
+    @Column(name = "CODECURNRC", nullable = false, length = 3)
+    private String codecurnrc;
+    @Basic
+    @Column(name = "TXAMT1RC", nullable = false, precision = 3)
+    private BigDecimal txamt1Rc;
+    @Basic
+    @Column(name = "TXAMT2RC", nullable = false, precision = 3)
+    private BigDecimal txamt2Rc;
+    @Basic
+    @Column(name = "TXAMT3RC", nullable = false, precision = 3)
+    private BigDecimal txamt3Rc;
+    @Basic
+    @Column(name = "TXAMT4RC", nullable = false, precision = 3)
+    private BigDecimal txamt4Rc;
+    @Basic
+    @Column(name = "TXAMT5RC", nullable = false, precision = 3)
+    private BigDecimal txamt5Rc;
+    @Basic
+    @Column(name = "TXTOTRC", nullable = false, precision = 3)
+    private BigDecimal txtotrc;
+    @Basic
+    @Column(name = "TXALLRC", nullable = false, precision = 3)
+    private BigDecimal txallrc;
+    @Basic
+    @Column(name = "TXEXPRC", nullable = false, precision = 3)
+    private BigDecimal txexprc;
+    @Basic
+    @Column(name = "TXRECRC", nullable = false, precision = 3)
+    private BigDecimal txrecrc;
+    @Basic
+    @Column(name = "AMTRECTAX", nullable = false, precision = 3)
+    private BigDecimal amtrectax;
+    @Basic
+    @Column(name = "AMTEXPTAX", nullable = false, precision = 3)
+    private BigDecimal amtexptax;
+    @Basic
+    @Column(name = "TXBSE1HC", nullable = false, precision = 3)
+    private BigDecimal txbse1Hc;
+    @Basic
+    @Column(name = "TXBSE2HC", nullable = false, precision = 3)
+    private BigDecimal txbse2Hc;
+    @Basic
+    @Column(name = "TXBSE3HC", nullable = false, precision = 3)
+    private BigDecimal txbse3Hc;
+    @Basic
+    @Column(name = "TXBSE4HC", nullable = false, precision = 3)
+    private BigDecimal txbse4Hc;
+    @Basic
+    @Column(name = "TXBSE5HC", nullable = false, precision = 3)
+    private BigDecimal txbse5Hc;
+    @Basic
+    @Column(name = "TXAMT1HC", nullable = false, precision = 3)
+    private BigDecimal txamt1Hc;
+    @Basic
+    @Column(name = "TXAMT2HC", nullable = false, precision = 3)
+    private BigDecimal txamt2Hc;
+    @Basic
+    @Column(name = "TXAMT3HC", nullable = false, precision = 3)
+    private BigDecimal txamt3Hc;
+    @Basic
+    @Column(name = "TXAMT4HC", nullable = false, precision = 3)
+    private BigDecimal txamt4Hc;
+    @Basic
+    @Column(name = "TXAMT5HC", nullable = false, precision = 3)
+    private BigDecimal txamt5Hc;
+    @Basic
+    @Column(name = "ACCTREC1", nullable = false, length = 45)
+    private String acctrec1;
+    @Basic
+    @Column(name = "ACCTREC2", nullable = false, length = 45)
+    private String acctrec2;
+    @Basic
+    @Column(name = "ACCTREC3", nullable = false, length = 45)
+    private String acctrec3;
+    @Basic
+    @Column(name = "ACCTREC4", nullable = false, length = 45)
+    private String acctrec4;
+    @Basic
+    @Column(name = "ACCTREC5", nullable = false, length = 45)
+    private String acctrec5;
+    @Basic
+    @Column(name = "ACCTEXP1", nullable = false, length = 45)
+    private String acctexp1;
+    @Basic
+    @Column(name = "ACCTEXP2", nullable = false, length = 45)
+    private String acctexp2;
+    @Basic
+    @Column(name = "ACCTEXP3", nullable = false, length = 45)
+    private String acctexp3;
+    @Basic
+    @Column(name = "ACCTEXP4", nullable = false, length = 45)
+    private String acctexp4;
+    @Basic
+    @Column(name = "ACCTEXP5", nullable = false, length = 45)
+    private String acctexp5;
+    @Basic
+    @Column(name = "TXEXCLTC", nullable = false, precision = 3)
+    private BigDecimal txexcltc;
+    @Basic
+    @Column(name = "TXEXCLHC", nullable = false, precision = 3)
+    private BigDecimal txexclhc;
+    @Basic
+    @Column(name = "TXEXCLBC", nullable = false, precision = 3)
+    private BigDecimal txexclbc;
+    @Basic
+    @Column(name = "TXEXCLMC", nullable = false, precision = 3)
+    private BigDecimal txexclmc;
+    @Basic
+    @Column(name = "TXINCLTC", nullable = false, precision = 3)
+    private BigDecimal txincltc;
+    @Basic
+    @Column(name = "TXINCLHC", nullable = false, precision = 3)
+    private BigDecimal txinclhc;
+    @Basic
+    @Column(name = "TXINCLBC", nullable = false, precision = 3)
+    private BigDecimal txinclbc;
+    @Basic
+    @Column(name = "TXINCLMC", nullable = false, precision = 3)
+    private BigDecimal txinclmc;
+    @Basic
+    @Column(name = "ARAPBATCH", nullable = false, length = 9)
+    private String arapbatch;
+    @Basic
+    @Column(name = "ARAPENTRY", nullable = false, length = 9)
+    private String arapentry;
+    @Basic
+    @Column(name = "SWCHEQUE", nullable = false)
+    private short swcheque;
+    @Basic
+    @Column(name = "SWEFT", nullable = false)
+    private short sweft;
+    @Basic
+    @Column(name = "RXMTCHSEQ", nullable = false)
+    private short rxmtchseq;
+    @Basic
+    @Column(name = "RXTRNSCODE", nullable = false, length = 30)
+    private String rxtrnscode;
+    @Basic
+    @Column(name = "RXCATEGORY", nullable = false, length = 12)
+    private String rxcategory;
+    @Basic
+    @Column(name = "REVUNIQ", nullable = false)
+    private int revuniq;
+    @Basic
+    @Column(name = "NEWREVUNIQ", nullable = false)
+    private int newrevuniq;
+    @Basic
+    @Column(name = "ENTEREDBY", nullable = false, length = 8)
+    private String enteredby;
 
     public String getBatchid() {
         return batchid;
@@ -27,11 +529,6 @@ public class CbbthdEntity {
         this.batchid = batchid;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @jakarta.persistence.Column(name = "ENTRYNO")
-    private String entryno;
-
     public String getEntryno() {
         return entryno;
     }
@@ -40,33 +537,21 @@ public class CbbthdEntity {
         this.entryno = entryno;
     }
 
-    @Basic
-    @Column(name = "AUDTDATE")
-    private Integer audtdate;
-
-    public Integer getAudtdate() {
+    public int getAudtdate() {
         return audtdate;
     }
 
-    public void setAudtdate(Integer audtdate) {
+    public void setAudtdate(int audtdate) {
         this.audtdate = audtdate;
     }
 
-    @Basic
-    @Column(name = "AUDTTIME")
-    private Integer audttime;
-
-    public Integer getAudttime() {
+    public int getAudttime() {
         return audttime;
     }
 
-    public void setAudttime(Integer audttime) {
+    public void setAudttime(int audttime) {
         this.audttime = audttime;
     }
-
-    @Basic
-    @Column(name = "AUDTUSER")
-    private String audtuser;
 
     public String getAudtuser() {
         return audtuser;
@@ -76,10 +561,6 @@ public class CbbthdEntity {
         this.audtuser = audtuser;
     }
 
-    @Basic
-    @Column(name = "AUDTORG")
-    private String audtorg;
-
     public String getAudtorg() {
         return audtorg;
     }
@@ -88,21 +569,13 @@ public class CbbthdEntity {
         this.audtorg = audtorg;
     }
 
-    @Basic
-    @Column(name = "ENTRYTYPE")
-    private Short entrytype;
-
-    public Short getEntrytype() {
+    public short getEntrytype() {
         return entrytype;
     }
 
-    public void setEntrytype(Short entrytype) {
+    public void setEntrytype(short entrytype) {
         this.entrytype = entrytype;
     }
-
-    @Basic
-    @Column(name = "REFERENCE")
-    private String reference;
 
     public String getReference() {
         return reference;
@@ -112,10 +585,6 @@ public class CbbthdEntity {
         this.reference = reference;
     }
 
-    @Basic
-    @Column(name = "PERIOD")
-    private String period;
-
     public String getPeriod() {
         return period;
     }
@@ -124,45 +593,29 @@ public class CbbthdEntity {
         this.period = period;
     }
 
-    @Basic
-    @Column(name = "DATE")
-    private Integer date;
-
-    public Integer getDate() {
+    public int getDate() {
         return date;
     }
 
-    public void setDate(Integer date) {
+    public void setDate(int date) {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "DATECHQPRN")
-    private Integer datechqprn;
-
-    public Integer getDatechqprn() {
+    public int getDatechqprn() {
         return datechqprn;
     }
 
-    public void setDatechqprn(Integer datechqprn) {
+    public void setDatechqprn(int datechqprn) {
         this.datechqprn = datechqprn;
     }
 
-    @Basic
-    @Column(name = "SWCHQPRN")
-    private Short swchqprn;
-
-    public Short getSwchqprn() {
+    public short getSwchqprn() {
         return swchqprn;
     }
 
-    public void setSwchqprn(Short swchqprn) {
+    public void setSwchqprn(short swchqprn) {
         this.swchqprn = swchqprn;
     }
-
-    @Basic
-    @Column(name = "MISCCODE")
-    private String misccode;
 
     public String getMisccode() {
         return misccode;
@@ -172,10 +625,6 @@ public class CbbthdEntity {
         this.misccode = misccode;
     }
 
-    @Basic
-    @Column(name = "TEXTDESC")
-    private String textdesc;
-
     public String getTextdesc() {
         return textdesc;
     }
@@ -183,10 +632,6 @@ public class CbbthdEntity {
     public void setTextdesc(String textdesc) {
         this.textdesc = textdesc;
     }
-
-    @Basic
-    @Column(name = "DISTCODE")
-    private String distcode;
 
     public String getDistcode() {
         return distcode;
@@ -196,10 +641,6 @@ public class CbbthdEntity {
         this.distcode = distcode;
     }
 
-    @Basic
-    @Column(name = "CHARGECODE")
-    private String chargecode;
-
     public String getChargecode() {
         return chargecode;
     }
@@ -207,10 +648,6 @@ public class CbbthdEntity {
     public void setChargecode(String chargecode) {
         this.chargecode = chargecode;
     }
-
-    @Basic
-    @Column(name = "CHRGAMOUNT")
-    private BigDecimal chrgamount;
 
     public BigDecimal getChrgamount() {
         return chrgamount;
@@ -220,21 +657,13 @@ public class CbbthdEntity {
         this.chrgamount = chrgamount;
     }
 
-    @Basic
-    @Column(name = "NODETAILS")
-    private Integer nodetails;
-
-    public Integer getNodetails() {
+    public int getNodetails() {
         return nodetails;
     }
 
-    public void setNodetails(Integer nodetails) {
+    public void setNodetails(int nodetails) {
         this.nodetails = nodetails;
     }
-
-    @Basic
-    @Column(name = "TOTAMOUNT")
-    private BigDecimal totamount;
 
     public BigDecimal getTotamount() {
         return totamount;
@@ -244,10 +673,6 @@ public class CbbthdEntity {
         this.totamount = totamount;
     }
 
-    @Basic
-    @Column(name = "TOTTAX")
-    private BigDecimal tottax;
-
     public BigDecimal getTottax() {
         return tottax;
     }
@@ -255,10 +680,6 @@ public class CbbthdEntity {
     public void setTottax(BigDecimal tottax) {
         this.tottax = tottax;
     }
-
-    @Basic
-    @Column(name = "TAXPERCNT")
-    private BigDecimal taxpercnt;
 
     public BigDecimal getTaxpercnt() {
         return taxpercnt;
@@ -268,10 +689,6 @@ public class CbbthdEntity {
         this.taxpercnt = taxpercnt;
     }
 
-    @Basic
-    @Column(name = "BK2GLCURHM")
-    private String bk2Glcurhm;
-
     public String getBk2Glcurhm() {
         return bk2Glcurhm;
     }
@@ -279,10 +696,6 @@ public class CbbthdEntity {
     public void setBk2Glcurhm(String bk2Glcurhm) {
         this.bk2Glcurhm = bk2Glcurhm;
     }
-
-    @Basic
-    @Column(name = "BK2GLRTTYP")
-    private String bk2Glrttyp;
 
     public String getBk2Glrttyp() {
         return bk2Glrttyp;
@@ -292,10 +705,6 @@ public class CbbthdEntity {
         this.bk2Glrttyp = bk2Glrttyp;
     }
 
-    @Basic
-    @Column(name = "BK2GLCURSR")
-    private String bk2Glcursr;
-
     public String getBk2Glcursr() {
         return bk2Glcursr;
     }
@@ -304,21 +713,13 @@ public class CbbthdEntity {
         this.bk2Glcursr = bk2Glcursr;
     }
 
-    @Basic
-    @Column(name = "BK2GLDATE")
-    private Integer bk2Gldate;
-
-    public Integer getBk2Gldate() {
+    public int getBk2Gldate() {
         return bk2Gldate;
     }
 
-    public void setBk2Gldate(Integer bk2Gldate) {
+    public void setBk2Gldate(int bk2Gldate) {
         this.bk2Gldate = bk2Gldate;
     }
-
-    @Basic
-    @Column(name = "BK2GLRATE")
-    private BigDecimal bk2Glrate;
 
     public BigDecimal getBk2Glrate() {
         return bk2Glrate;
@@ -328,10 +729,6 @@ public class CbbthdEntity {
         this.bk2Glrate = bk2Glrate;
     }
 
-    @Basic
-    @Column(name = "BK2GLSPRD")
-    private BigDecimal bk2Glsprd;
-
     public BigDecimal getBk2Glsprd() {
         return bk2Glsprd;
     }
@@ -340,33 +737,21 @@ public class CbbthdEntity {
         this.bk2Glsprd = bk2Glsprd;
     }
 
-    @Basic
-    @Column(name = "BK2GLOP")
-    private Short bk2Glop;
-
-    public Short getBk2Glop() {
+    public short getBk2Glop() {
         return bk2Glop;
     }
 
-    public void setBk2Glop(Short bk2Glop) {
+    public void setBk2Glop(short bk2Glop) {
         this.bk2Glop = bk2Glop;
     }
 
-    @Basic
-    @Column(name = "BK2GLDTMTH")
-    private Short bk2Gldtmth;
-
-    public Short getBk2Gldtmth() {
+    public short getBk2Gldtmth() {
         return bk2Gldtmth;
     }
 
-    public void setBk2Gldtmth(Short bk2Gldtmth) {
+    public void setBk2Gldtmth(short bk2Gldtmth) {
         this.bk2Gldtmth = bk2Gldtmth;
     }
-
-    @Basic
-    @Column(name = "BT2GLCURHM")
-    private String bt2Glcurhm;
 
     public String getBt2Glcurhm() {
         return bt2Glcurhm;
@@ -376,10 +761,6 @@ public class CbbthdEntity {
         this.bt2Glcurhm = bt2Glcurhm;
     }
 
-    @Basic
-    @Column(name = "BT2GLRTTYP")
-    private String bt2Glrttyp;
-
     public String getBt2Glrttyp() {
         return bt2Glrttyp;
     }
@@ -387,10 +768,6 @@ public class CbbthdEntity {
     public void setBt2Glrttyp(String bt2Glrttyp) {
         this.bt2Glrttyp = bt2Glrttyp;
     }
-
-    @Basic
-    @Column(name = "BT2GLCURSR")
-    private String bt2Glcursr;
 
     public String getBt2Glcursr() {
         return bt2Glcursr;
@@ -400,21 +777,13 @@ public class CbbthdEntity {
         this.bt2Glcursr = bt2Glcursr;
     }
 
-    @Basic
-    @Column(name = "BT2GLDATE")
-    private Integer bt2Gldate;
-
-    public Integer getBt2Gldate() {
+    public int getBt2Gldate() {
         return bt2Gldate;
     }
 
-    public void setBt2Gldate(Integer bt2Gldate) {
+    public void setBt2Gldate(int bt2Gldate) {
         this.bt2Gldate = bt2Gldate;
     }
-
-    @Basic
-    @Column(name = "BT2GLRATE")
-    private BigDecimal bt2Glrate;
 
     public BigDecimal getBt2Glrate() {
         return bt2Glrate;
@@ -424,10 +793,6 @@ public class CbbthdEntity {
         this.bt2Glrate = bt2Glrate;
     }
 
-    @Basic
-    @Column(name = "BT2GLSPRD")
-    private BigDecimal bt2Glsprd;
-
     public BigDecimal getBt2Glsprd() {
         return bt2Glsprd;
     }
@@ -436,33 +801,21 @@ public class CbbthdEntity {
         this.bt2Glsprd = bt2Glsprd;
     }
 
-    @Basic
-    @Column(name = "BT2GLOP")
-    private Short bt2Glop;
-
-    public Short getBt2Glop() {
+    public short getBt2Glop() {
         return bt2Glop;
     }
 
-    public void setBt2Glop(Short bt2Glop) {
+    public void setBt2Glop(short bt2Glop) {
         this.bt2Glop = bt2Glop;
     }
 
-    @Basic
-    @Column(name = "BT2GLDTMTH")
-    private Short bt2Gldtmth;
-
-    public Short getBt2Gldtmth() {
+    public short getBt2Gldtmth() {
         return bt2Gldtmth;
     }
 
-    public void setBt2Gldtmth(Short bt2Gldtmth) {
+    public void setBt2Gldtmth(short bt2Gldtmth) {
         this.bt2Gldtmth = bt2Gldtmth;
     }
-
-    @Basic
-    @Column(name = "MS2GLCURHM")
-    private String ms2Glcurhm;
 
     public String getMs2Glcurhm() {
         return ms2Glcurhm;
@@ -472,10 +825,6 @@ public class CbbthdEntity {
         this.ms2Glcurhm = ms2Glcurhm;
     }
 
-    @Basic
-    @Column(name = "MS2GLRTTYP")
-    private String ms2Glrttyp;
-
     public String getMs2Glrttyp() {
         return ms2Glrttyp;
     }
@@ -483,10 +832,6 @@ public class CbbthdEntity {
     public void setMs2Glrttyp(String ms2Glrttyp) {
         this.ms2Glrttyp = ms2Glrttyp;
     }
-
-    @Basic
-    @Column(name = "MS2GLCURSR")
-    private String ms2Glcursr;
 
     public String getMs2Glcursr() {
         return ms2Glcursr;
@@ -496,21 +841,13 @@ public class CbbthdEntity {
         this.ms2Glcursr = ms2Glcursr;
     }
 
-    @Basic
-    @Column(name = "MS2GLDATE")
-    private Integer ms2Gldate;
-
-    public Integer getMs2Gldate() {
+    public int getMs2Gldate() {
         return ms2Gldate;
     }
 
-    public void setMs2Gldate(Integer ms2Gldate) {
+    public void setMs2Gldate(int ms2Gldate) {
         this.ms2Gldate = ms2Gldate;
     }
-
-    @Basic
-    @Column(name = "MS2GLRATE")
-    private BigDecimal ms2Glrate;
 
     public BigDecimal getMs2Glrate() {
         return ms2Glrate;
@@ -520,10 +857,6 @@ public class CbbthdEntity {
         this.ms2Glrate = ms2Glrate;
     }
 
-    @Basic
-    @Column(name = "MS2GLSPRD")
-    private BigDecimal ms2Glsprd;
-
     public BigDecimal getMs2Glsprd() {
         return ms2Glsprd;
     }
@@ -532,69 +865,45 @@ public class CbbthdEntity {
         this.ms2Glsprd = ms2Glsprd;
     }
 
-    @Basic
-    @Column(name = "MS2GLOP")
-    private Short ms2Glop;
-
-    public Short getMs2Glop() {
+    public short getMs2Glop() {
         return ms2Glop;
     }
 
-    public void setMs2Glop(Short ms2Glop) {
+    public void setMs2Glop(short ms2Glop) {
         this.ms2Glop = ms2Glop;
     }
 
-    @Basic
-    @Column(name = "MS2GLDTMTH")
-    private Short ms2Gldtmth;
-
-    public Short getMs2Gldtmth() {
+    public short getMs2Gldtmth() {
         return ms2Gldtmth;
     }
 
-    public void setMs2Gldtmth(Short ms2Gldtmth) {
+    public void setMs2Gldtmth(short ms2Gldtmth) {
         this.ms2Gldtmth = ms2Gldtmth;
     }
 
-    @Basic
-    @Column(name = "SWCASH")
-    private Short swcash;
-
-    public Short getSwcash() {
+    public short getSwcash() {
         return swcash;
     }
 
-    public void setSwcash(Short swcash) {
+    public void setSwcash(short swcash) {
         this.swcash = swcash;
     }
 
-    @Basic
-    @Column(name = "BTCHNODEC")
-    private Short btchnodec;
-
-    public Short getBtchnodec() {
+    public short getBtchnodec() {
         return btchnodec;
     }
 
-    public void setBtchnodec(Short btchnodec) {
+    public void setBtchnodec(short btchnodec) {
         this.btchnodec = btchnodec;
     }
 
-    @Basic
-    @Column(name = "MISCNODEC")
-    private Short miscnodec;
-
-    public Short getMiscnodec() {
+    public short getMiscnodec() {
         return miscnodec;
     }
 
-    public void setMiscnodec(Short miscnodec) {
+    public void setMiscnodec(short miscnodec) {
         this.miscnodec = miscnodec;
     }
-
-    @Basic
-    @Column(name = "TAXGROUP")
-    private String taxgroup;
 
     public String getTaxgroup() {
         return taxgroup;
@@ -604,10 +913,6 @@ public class CbbthdEntity {
         this.taxgroup = taxgroup;
     }
 
-    @Basic
-    @Column(name = "CUSTCHQNO")
-    private String custchqno;
-
     public String getCustchqno() {
         return custchqno;
     }
@@ -616,21 +921,13 @@ public class CbbthdEntity {
         this.custchqno = custchqno;
     }
 
-    @Basic
-    @Column(name = "NOSUBDETL")
-    private Integer nosubdetl;
-
-    public Integer getNosubdetl() {
+    public int getNosubdetl() {
         return nosubdetl;
     }
 
-    public void setNosubdetl(Integer nosubdetl) {
+    public void setNosubdetl(int nosubdetl) {
         this.nosubdetl = nosubdetl;
     }
-
-    @Basic
-    @Column(name = "APPLAMOUNT")
-    private BigDecimal applamount;
 
     public BigDecimal getApplamount() {
         return applamount;
@@ -640,10 +937,6 @@ public class CbbthdEntity {
         this.applamount = applamount;
     }
 
-    @Basic
-    @Column(name = "APPLDISC")
-    private BigDecimal appldisc;
-
     public BigDecimal getAppldisc() {
         return appldisc;
     }
@@ -651,10 +944,6 @@ public class CbbthdEntity {
     public void setAppldisc(BigDecimal appldisc) {
         this.appldisc = appldisc;
     }
-
-    @Basic
-    @Column(name = "ACCTNAT")
-    private String acctnat;
 
     public String getAcctnat() {
         return acctnat;
@@ -664,10 +953,6 @@ public class CbbthdEntity {
         this.acctnat = acctnat;
     }
 
-    @Basic
-    @Column(name = "ADJAMOUNT")
-    private BigDecimal adjamount;
-
     public BigDecimal getAdjamount() {
         return adjamount;
     }
@@ -675,10 +960,6 @@ public class CbbthdEntity {
     public void setAdjamount(BigDecimal adjamount) {
         this.adjamount = adjamount;
     }
-
-    @Basic
-    @Column(name = "PROFILEID")
-    private String profileid;
 
     public String getProfileid() {
         return profileid;
@@ -688,21 +969,13 @@ public class CbbthdEntity {
         this.profileid = profileid;
     }
 
-    @Basic
-    @Column(name = "SWINTERCO")
-    private Short swinterco;
-
-    public Short getSwinterco() {
+    public short getSwinterco() {
         return swinterco;
     }
 
-    public void setSwinterco(Short swinterco) {
+    public void setSwinterco(short swinterco) {
         this.swinterco = swinterco;
     }
-
-    @Basic
-    @Column(name = "FISCYR")
-    private String fiscyr;
 
     public String getFiscyr() {
         return fiscyr;
@@ -712,10 +985,6 @@ public class CbbthdEntity {
         this.fiscyr = fiscyr;
     }
 
-    @Basic
-    @Column(name = "CCTYPE")
-    private String cctype;
-
     public String getCctype() {
         return cctype;
     }
@@ -723,10 +992,6 @@ public class CbbthdEntity {
     public void setCctype(String cctype) {
         this.cctype = cctype;
     }
-
-    @Basic
-    @Column(name = "CCNUMBER")
-    private Object ccnumber;
 
     public Object getCcnumber() {
         return ccnumber;
@@ -736,10 +1001,6 @@ public class CbbthdEntity {
         this.ccnumber = ccnumber;
     }
 
-    @Basic
-    @Column(name = "CCNAME")
-    private String ccname;
-
     public String getCcname() {
         return ccname;
     }
@@ -748,21 +1009,13 @@ public class CbbthdEntity {
         this.ccname = ccname;
     }
 
-    @Basic
-    @Column(name = "CCEXP")
-    private Integer ccexp;
-
-    public Integer getCcexp() {
+    public int getCcexp() {
         return ccexp;
     }
 
-    public void setCcexp(Integer ccexp) {
+    public void setCcexp(int ccexp) {
         this.ccexp = ccexp;
     }
-
-    @Basic
-    @Column(name = "CCAUTHCODE")
-    private String ccauthcode;
 
     public String getCcauthcode() {
         return ccauthcode;
@@ -772,10 +1025,6 @@ public class CbbthdEntity {
         this.ccauthcode = ccauthcode;
     }
 
-    @Basic
-    @Column(name = "XCCNUMBER")
-    private String xccnumber;
-
     public String getXccnumber() {
         return xccnumber;
     }
@@ -784,21 +1033,13 @@ public class CbbthdEntity {
         this.xccnumber = xccnumber;
     }
 
-    @Basic
-    @Column(name = "SERIAL")
-    private Long serial;
-
-    public Long getSerial() {
+    public int getSerial() {
         return serial;
     }
 
-    public void setSerial(Long serial) {
+    public void setSerial(int serial) {
         this.serial = serial;
     }
-
-    @Basic
-    @Column(name = "BANKAMOUNT")
-    private BigDecimal bankamount;
 
     public BigDecimal getBankamount() {
         return bankamount;
@@ -808,10 +1049,6 @@ public class CbbthdEntity {
         this.bankamount = bankamount;
     }
 
-    @Basic
-    @Column(name = "BTCHAMOUNT")
-    private BigDecimal btchamount;
-
     public BigDecimal getBtchamount() {
         return btchamount;
     }
@@ -819,10 +1056,6 @@ public class CbbthdEntity {
     public void setBtchamount(BigDecimal btchamount) {
         this.btchamount = btchamount;
     }
-
-    @Basic
-    @Column(name = "MISCAMOUNT")
-    private BigDecimal miscamount;
 
     public BigDecimal getMiscamount() {
         return miscamount;
@@ -832,10 +1065,6 @@ public class CbbthdEntity {
         this.miscamount = miscamount;
     }
 
-    @Basic
-    @Column(name = "FUNCAMOUNT")
-    private BigDecimal funcamount;
-
     public BigDecimal getFuncamount() {
         return funcamount;
     }
@@ -843,10 +1072,6 @@ public class CbbthdEntity {
     public void setFuncamount(BigDecimal funcamount) {
         this.funcamount = funcamount;
     }
-
-    @Basic
-    @Column(name = "HDRDEBIT")
-    private BigDecimal hdrdebit;
 
     public BigDecimal getHdrdebit() {
         return hdrdebit;
@@ -856,10 +1081,6 @@ public class CbbthdEntity {
         this.hdrdebit = hdrdebit;
     }
 
-    @Basic
-    @Column(name = "HDRCREDIT")
-    private BigDecimal hdrcredit;
-
     public BigDecimal getHdrcredit() {
         return hdrcredit;
     }
@@ -867,10 +1088,6 @@ public class CbbthdEntity {
     public void setHdrcredit(BigDecimal hdrcredit) {
         this.hdrcredit = hdrcredit;
     }
-
-    @Basic
-    @Column(name = "TAXAUTH1")
-    private String taxauth1;
 
     public String getTaxauth1() {
         return taxauth1;
@@ -880,10 +1097,6 @@ public class CbbthdEntity {
         this.taxauth1 = taxauth1;
     }
 
-    @Basic
-    @Column(name = "TAXAUTH2")
-    private String taxauth2;
-
     public String getTaxauth2() {
         return taxauth2;
     }
@@ -891,10 +1104,6 @@ public class CbbthdEntity {
     public void setTaxauth2(String taxauth2) {
         this.taxauth2 = taxauth2;
     }
-
-    @Basic
-    @Column(name = "TAXAUTH3")
-    private String taxauth3;
 
     public String getTaxauth3() {
         return taxauth3;
@@ -904,10 +1113,6 @@ public class CbbthdEntity {
         this.taxauth3 = taxauth3;
     }
 
-    @Basic
-    @Column(name = "TAXAUTH4")
-    private String taxauth4;
-
     public String getTaxauth4() {
         return taxauth4;
     }
@@ -915,10 +1120,6 @@ public class CbbthdEntity {
     public void setTaxauth4(String taxauth4) {
         this.taxauth4 = taxauth4;
     }
-
-    @Basic
-    @Column(name = "TAXAUTH5")
-    private String taxauth5;
 
     public String getTaxauth5() {
         return taxauth5;
@@ -928,10 +1129,6 @@ public class CbbthdEntity {
         this.taxauth5 = taxauth5;
     }
 
-    @Basic
-    @Column(name = "TXAU1DESC")
-    private String txau1Desc;
-
     public String getTxau1Desc() {
         return txau1Desc;
     }
@@ -939,10 +1136,6 @@ public class CbbthdEntity {
     public void setTxau1Desc(String txau1Desc) {
         this.txau1Desc = txau1Desc;
     }
-
-    @Basic
-    @Column(name = "TXAU2DESC")
-    private String txau2Desc;
 
     public String getTxau2Desc() {
         return txau2Desc;
@@ -952,10 +1145,6 @@ public class CbbthdEntity {
         this.txau2Desc = txau2Desc;
     }
 
-    @Basic
-    @Column(name = "TXAU3DESC")
-    private String txau3Desc;
-
     public String getTxau3Desc() {
         return txau3Desc;
     }
@@ -963,10 +1152,6 @@ public class CbbthdEntity {
     public void setTxau3Desc(String txau3Desc) {
         this.txau3Desc = txau3Desc;
     }
-
-    @Basic
-    @Column(name = "TXAU4DESC")
-    private String txau4Desc;
 
     public String getTxau4Desc() {
         return txau4Desc;
@@ -976,10 +1161,6 @@ public class CbbthdEntity {
         this.txau4Desc = txau4Desc;
     }
 
-    @Basic
-    @Column(name = "TXAU5DESC")
-    private String txau5Desc;
-
     public String getTxau5Desc() {
         return txau5Desc;
     }
@@ -988,69 +1169,45 @@ public class CbbthdEntity {
         this.txau5Desc = txau5Desc;
     }
 
-    @Basic
-    @Column(name = "TAXCLASS1")
-    private Short taxclass1;
-
-    public Short getTaxclass1() {
+    public short getTaxclass1() {
         return taxclass1;
     }
 
-    public void setTaxclass1(Short taxclass1) {
+    public void setTaxclass1(short taxclass1) {
         this.taxclass1 = taxclass1;
     }
 
-    @Basic
-    @Column(name = "TAXCLASS2")
-    private Short taxclass2;
-
-    public Short getTaxclass2() {
+    public short getTaxclass2() {
         return taxclass2;
     }
 
-    public void setTaxclass2(Short taxclass2) {
+    public void setTaxclass2(short taxclass2) {
         this.taxclass2 = taxclass2;
     }
 
-    @Basic
-    @Column(name = "TAXCLASS3")
-    private Short taxclass3;
-
-    public Short getTaxclass3() {
+    public short getTaxclass3() {
         return taxclass3;
     }
 
-    public void setTaxclass3(Short taxclass3) {
+    public void setTaxclass3(short taxclass3) {
         this.taxclass3 = taxclass3;
     }
 
-    @Basic
-    @Column(name = "TAXCLASS4")
-    private Short taxclass4;
-
-    public Short getTaxclass4() {
+    public short getTaxclass4() {
         return taxclass4;
     }
 
-    public void setTaxclass4(Short taxclass4) {
+    public void setTaxclass4(short taxclass4) {
         this.taxclass4 = taxclass4;
     }
 
-    @Basic
-    @Column(name = "TAXCLASS5")
-    private Short taxclass5;
-
-    public Short getTaxclass5() {
+    public short getTaxclass5() {
         return taxclass5;
     }
 
-    public void setTaxclass5(Short taxclass5) {
+    public void setTaxclass5(short taxclass5) {
         this.taxclass5 = taxclass5;
     }
-
-    @Basic
-    @Column(name = "BASETAX1")
-    private BigDecimal basetax1;
 
     public BigDecimal getBasetax1() {
         return basetax1;
@@ -1060,10 +1217,6 @@ public class CbbthdEntity {
         this.basetax1 = basetax1;
     }
 
-    @Basic
-    @Column(name = "BASETAX2")
-    private BigDecimal basetax2;
-
     public BigDecimal getBasetax2() {
         return basetax2;
     }
@@ -1071,10 +1224,6 @@ public class CbbthdEntity {
     public void setBasetax2(BigDecimal basetax2) {
         this.basetax2 = basetax2;
     }
-
-    @Basic
-    @Column(name = "BASETAX3")
-    private BigDecimal basetax3;
 
     public BigDecimal getBasetax3() {
         return basetax3;
@@ -1084,10 +1233,6 @@ public class CbbthdEntity {
         this.basetax3 = basetax3;
     }
 
-    @Basic
-    @Column(name = "BASETAX4")
-    private BigDecimal basetax4;
-
     public BigDecimal getBasetax4() {
         return basetax4;
     }
@@ -1095,10 +1240,6 @@ public class CbbthdEntity {
     public void setBasetax4(BigDecimal basetax4) {
         this.basetax4 = basetax4;
     }
-
-    @Basic
-    @Column(name = "BASETAX5")
-    private BigDecimal basetax5;
 
     public BigDecimal getBasetax5() {
         return basetax5;
@@ -1108,10 +1249,6 @@ public class CbbthdEntity {
         this.basetax5 = basetax5;
     }
 
-    @Basic
-    @Column(name = "AMTTAX1")
-    private BigDecimal amttax1;
-
     public BigDecimal getAmttax1() {
         return amttax1;
     }
@@ -1119,10 +1256,6 @@ public class CbbthdEntity {
     public void setAmttax1(BigDecimal amttax1) {
         this.amttax1 = amttax1;
     }
-
-    @Basic
-    @Column(name = "AMTTAX2")
-    private BigDecimal amttax2;
 
     public BigDecimal getAmttax2() {
         return amttax2;
@@ -1132,10 +1265,6 @@ public class CbbthdEntity {
         this.amttax2 = amttax2;
     }
 
-    @Basic
-    @Column(name = "AMTTAX3")
-    private BigDecimal amttax3;
-
     public BigDecimal getAmttax3() {
         return amttax3;
     }
@@ -1143,10 +1272,6 @@ public class CbbthdEntity {
     public void setAmttax3(BigDecimal amttax3) {
         this.amttax3 = amttax3;
     }
-
-    @Basic
-    @Column(name = "AMTTAX4")
-    private BigDecimal amttax4;
 
     public BigDecimal getAmttax4() {
         return amttax4;
@@ -1156,10 +1281,6 @@ public class CbbthdEntity {
         this.amttax4 = amttax4;
     }
 
-    @Basic
-    @Column(name = "AMTTAX5")
-    private BigDecimal amttax5;
-
     public BigDecimal getAmttax5() {
         return amttax5;
     }
@@ -1168,69 +1289,45 @@ public class CbbthdEntity {
         this.amttax5 = amttax5;
     }
 
-    @Basic
-    @Column(name = "SWTAXINCL1")
-    private Short swtaxincl1;
-
-    public Short getSwtaxincl1() {
+    public short getSwtaxincl1() {
         return swtaxincl1;
     }
 
-    public void setSwtaxincl1(Short swtaxincl1) {
+    public void setSwtaxincl1(short swtaxincl1) {
         this.swtaxincl1 = swtaxincl1;
     }
 
-    @Basic
-    @Column(name = "SWTAXINCL2")
-    private Short swtaxincl2;
-
-    public Short getSwtaxincl2() {
+    public short getSwtaxincl2() {
         return swtaxincl2;
     }
 
-    public void setSwtaxincl2(Short swtaxincl2) {
+    public void setSwtaxincl2(short swtaxincl2) {
         this.swtaxincl2 = swtaxincl2;
     }
 
-    @Basic
-    @Column(name = "SWTAXINCL3")
-    private Short swtaxincl3;
-
-    public Short getSwtaxincl3() {
+    public short getSwtaxincl3() {
         return swtaxincl3;
     }
 
-    public void setSwtaxincl3(Short swtaxincl3) {
+    public void setSwtaxincl3(short swtaxincl3) {
         this.swtaxincl3 = swtaxincl3;
     }
 
-    @Basic
-    @Column(name = "SWTAXINCL4")
-    private Short swtaxincl4;
-
-    public Short getSwtaxincl4() {
+    public short getSwtaxincl4() {
         return swtaxincl4;
     }
 
-    public void setSwtaxincl4(Short swtaxincl4) {
+    public void setSwtaxincl4(short swtaxincl4) {
         this.swtaxincl4 = swtaxincl4;
     }
 
-    @Basic
-    @Column(name = "SWTAXINCL5")
-    private Short swtaxincl5;
-
-    public Short getSwtaxincl5() {
+    public short getSwtaxincl5() {
         return swtaxincl5;
     }
 
-    public void setSwtaxincl5(Short swtaxincl5) {
+    public void setSwtaxincl5(short swtaxincl5) {
         this.swtaxincl5 = swtaxincl5;
     }
-
-    @Basic
-    @Column(name = "BANKCODE")
-    private String bankcode;
 
     public String getBankcode() {
         return bankcode;
@@ -1240,45 +1337,29 @@ public class CbbthdEntity {
         this.bankcode = bankcode;
     }
 
-    @Basic
-    @Column(name = "SWPOSTED")
-    private Short swposted;
-
-    public Short getSwposted() {
+    public short getSwposted() {
         return swposted;
     }
 
-    public void setSwposted(Short swposted) {
+    public void setSwposted(short swposted) {
         this.swposted = swposted;
     }
 
-    @Basic
-    @Column(name = "VALUES")
-    private Integer values;
-
-    public Integer getValues() {
+    public int getValues() {
         return values;
     }
 
-    public void setValues(Integer values) {
+    public void setValues(int values) {
         this.values = values;
     }
 
-    @Basic
-    @Column(name = "PROCESSCMD")
-    private Short processcmd;
-
-    public Short getProcesscmd() {
+    public short getProcesscmd() {
         return processcmd;
     }
 
-    public void setProcesscmd(Short processcmd) {
+    public void setProcesscmd(short processcmd) {
         this.processcmd = processcmd;
     }
-
-    @Basic
-    @Column(name = "TOTUNAPPL")
-    private BigDecimal totunappl;
 
     public BigDecimal getTotunappl() {
         return totunappl;
@@ -1288,10 +1369,6 @@ public class CbbthdEntity {
         this.totunappl = totunappl;
     }
 
-    @Basic
-    @Column(name = "TOTAPPLAMT")
-    private BigDecimal totapplamt;
-
     public BigDecimal getTotapplamt() {
         return totapplamt;
     }
@@ -1299,10 +1376,6 @@ public class CbbthdEntity {
     public void setTotapplamt(BigDecimal totapplamt) {
         this.totapplamt = totapplamt;
     }
-
-    @Basic
-    @Column(name = "TOTAPPLDSC")
-    private BigDecimal totappldsc;
 
     public BigDecimal getTotappldsc() {
         return totappldsc;
@@ -1312,21 +1385,13 @@ public class CbbthdEntity {
         this.totappldsc = totappldsc;
     }
 
-    @Basic
-    @Column(name = "ALLOCMODE")
-    private Short allocmode;
-
-    public Short getAllocmode() {
+    public short getAllocmode() {
         return allocmode;
     }
 
-    public void setAllocmode(Short allocmode) {
+    public void setAllocmode(short allocmode) {
         this.allocmode = allocmode;
     }
-
-    @Basic
-    @Column(name = "ALLOCAMT")
-    private BigDecimal allocamt;
 
     public BigDecimal getAllocamt() {
         return allocamt;
@@ -1336,57 +1401,37 @@ public class CbbthdEntity {
         this.allocamt = allocamt;
     }
 
-    @Basic
-    @Column(name = "CLASSTYPE")
-    private Short classtype;
-
-    public Short getClasstype() {
+    public short getClasstype() {
         return classtype;
     }
 
-    public void setClasstype(Short classtype) {
+    public void setClasstype(short classtype) {
         this.classtype = classtype;
     }
 
-    @Basic
-    @Column(name = "CLASSAXIS")
-    private Short classaxis;
-
-    public Short getClassaxis() {
+    public short getClassaxis() {
         return classaxis;
     }
 
-    public void setClassaxis(Short classaxis) {
+    public void setClassaxis(short classaxis) {
         this.classaxis = classaxis;
     }
 
-    @Basic
-    @Column(name = "DATALEVEL")
-    private Short datalevel;
-
-    public Short getDatalevel() {
+    public short getDatalevel() {
         return datalevel;
     }
 
-    public void setDatalevel(Short datalevel) {
+    public void setDatalevel(short datalevel) {
         this.datalevel = datalevel;
     }
 
-    @Basic
-    @Column(name = "RECXCNTER")
-    private Integer recxcnter;
-
-    public Integer getRecxcnter() {
+    public int getRecxcnter() {
         return recxcnter;
     }
 
-    public void setRecxcnter(Integer recxcnter) {
+    public void setRecxcnter(int recxcnter) {
         this.recxcnter = recxcnter;
     }
-
-    @Basic
-    @Column(name = "RATERC")
-    private BigDecimal raterc;
 
     public BigDecimal getRaterc() {
         return raterc;
@@ -1396,10 +1441,6 @@ public class CbbthdEntity {
         this.raterc = raterc;
     }
 
-    @Basic
-    @Column(name = "RATETYPERC")
-    private String ratetyperc;
-
     public String getRatetyperc() {
         return ratetyperc;
     }
@@ -1408,33 +1449,21 @@ public class CbbthdEntity {
         this.ratetyperc = ratetyperc;
     }
 
-    @Basic
-    @Column(name = "RATEOPRC")
-    private Short rateoprc;
-
-    public Short getRateoprc() {
+    public short getRateoprc() {
         return rateoprc;
     }
 
-    public void setRateoprc(Short rateoprc) {
+    public void setRateoprc(short rateoprc) {
         this.rateoprc = rateoprc;
     }
 
-    @Basic
-    @Column(name = "RATEDATERC")
-    private Integer ratedaterc;
-
-    public Integer getRatedaterc() {
+    public int getRatedaterc() {
         return ratedaterc;
     }
 
-    public void setRatedaterc(Integer ratedaterc) {
+    public void setRatedaterc(int ratedaterc) {
         this.ratedaterc = ratedaterc;
     }
-
-    @Basic
-    @Column(name = "CODECURNRC")
-    private String codecurnrc;
 
     public String getCodecurnrc() {
         return codecurnrc;
@@ -1444,10 +1473,6 @@ public class CbbthdEntity {
         this.codecurnrc = codecurnrc;
     }
 
-    @Basic
-    @Column(name = "TXAMT1RC")
-    private BigDecimal txamt1Rc;
-
     public BigDecimal getTxamt1Rc() {
         return txamt1Rc;
     }
@@ -1455,10 +1480,6 @@ public class CbbthdEntity {
     public void setTxamt1Rc(BigDecimal txamt1Rc) {
         this.txamt1Rc = txamt1Rc;
     }
-
-    @Basic
-    @Column(name = "TXAMT2RC")
-    private BigDecimal txamt2Rc;
 
     public BigDecimal getTxamt2Rc() {
         return txamt2Rc;
@@ -1468,10 +1489,6 @@ public class CbbthdEntity {
         this.txamt2Rc = txamt2Rc;
     }
 
-    @Basic
-    @Column(name = "TXAMT3RC")
-    private BigDecimal txamt3Rc;
-
     public BigDecimal getTxamt3Rc() {
         return txamt3Rc;
     }
@@ -1479,10 +1496,6 @@ public class CbbthdEntity {
     public void setTxamt3Rc(BigDecimal txamt3Rc) {
         this.txamt3Rc = txamt3Rc;
     }
-
-    @Basic
-    @Column(name = "TXAMT4RC")
-    private BigDecimal txamt4Rc;
 
     public BigDecimal getTxamt4Rc() {
         return txamt4Rc;
@@ -1492,10 +1505,6 @@ public class CbbthdEntity {
         this.txamt4Rc = txamt4Rc;
     }
 
-    @Basic
-    @Column(name = "TXAMT5RC")
-    private BigDecimal txamt5Rc;
-
     public BigDecimal getTxamt5Rc() {
         return txamt5Rc;
     }
@@ -1503,10 +1512,6 @@ public class CbbthdEntity {
     public void setTxamt5Rc(BigDecimal txamt5Rc) {
         this.txamt5Rc = txamt5Rc;
     }
-
-    @Basic
-    @Column(name = "TXTOTRC")
-    private BigDecimal txtotrc;
 
     public BigDecimal getTxtotrc() {
         return txtotrc;
@@ -1516,10 +1521,6 @@ public class CbbthdEntity {
         this.txtotrc = txtotrc;
     }
 
-    @Basic
-    @Column(name = "TXALLRC")
-    private BigDecimal txallrc;
-
     public BigDecimal getTxallrc() {
         return txallrc;
     }
@@ -1527,10 +1528,6 @@ public class CbbthdEntity {
     public void setTxallrc(BigDecimal txallrc) {
         this.txallrc = txallrc;
     }
-
-    @Basic
-    @Column(name = "TXEXPRC")
-    private BigDecimal txexprc;
 
     public BigDecimal getTxexprc() {
         return txexprc;
@@ -1540,10 +1537,6 @@ public class CbbthdEntity {
         this.txexprc = txexprc;
     }
 
-    @Basic
-    @Column(name = "TXRECRC")
-    private BigDecimal txrecrc;
-
     public BigDecimal getTxrecrc() {
         return txrecrc;
     }
@@ -1551,10 +1544,6 @@ public class CbbthdEntity {
     public void setTxrecrc(BigDecimal txrecrc) {
         this.txrecrc = txrecrc;
     }
-
-    @Basic
-    @Column(name = "AMTRECTAX")
-    private BigDecimal amtrectax;
 
     public BigDecimal getAmtrectax() {
         return amtrectax;
@@ -1564,10 +1553,6 @@ public class CbbthdEntity {
         this.amtrectax = amtrectax;
     }
 
-    @Basic
-    @Column(name = "AMTEXPTAX")
-    private BigDecimal amtexptax;
-
     public BigDecimal getAmtexptax() {
         return amtexptax;
     }
@@ -1575,10 +1560,6 @@ public class CbbthdEntity {
     public void setAmtexptax(BigDecimal amtexptax) {
         this.amtexptax = amtexptax;
     }
-
-    @Basic
-    @Column(name = "TXBSE1HC")
-    private BigDecimal txbse1Hc;
 
     public BigDecimal getTxbse1Hc() {
         return txbse1Hc;
@@ -1588,10 +1569,6 @@ public class CbbthdEntity {
         this.txbse1Hc = txbse1Hc;
     }
 
-    @Basic
-    @Column(name = "TXBSE2HC")
-    private BigDecimal txbse2Hc;
-
     public BigDecimal getTxbse2Hc() {
         return txbse2Hc;
     }
@@ -1599,10 +1576,6 @@ public class CbbthdEntity {
     public void setTxbse2Hc(BigDecimal txbse2Hc) {
         this.txbse2Hc = txbse2Hc;
     }
-
-    @Basic
-    @Column(name = "TXBSE3HC")
-    private BigDecimal txbse3Hc;
 
     public BigDecimal getTxbse3Hc() {
         return txbse3Hc;
@@ -1612,10 +1585,6 @@ public class CbbthdEntity {
         this.txbse3Hc = txbse3Hc;
     }
 
-    @Basic
-    @Column(name = "TXBSE4HC")
-    private BigDecimal txbse4Hc;
-
     public BigDecimal getTxbse4Hc() {
         return txbse4Hc;
     }
@@ -1623,10 +1592,6 @@ public class CbbthdEntity {
     public void setTxbse4Hc(BigDecimal txbse4Hc) {
         this.txbse4Hc = txbse4Hc;
     }
-
-    @Basic
-    @Column(name = "TXBSE5HC")
-    private BigDecimal txbse5Hc;
 
     public BigDecimal getTxbse5Hc() {
         return txbse5Hc;
@@ -1636,10 +1601,6 @@ public class CbbthdEntity {
         this.txbse5Hc = txbse5Hc;
     }
 
-    @Basic
-    @Column(name = "TXAMT1HC")
-    private BigDecimal txamt1Hc;
-
     public BigDecimal getTxamt1Hc() {
         return txamt1Hc;
     }
@@ -1647,10 +1608,6 @@ public class CbbthdEntity {
     public void setTxamt1Hc(BigDecimal txamt1Hc) {
         this.txamt1Hc = txamt1Hc;
     }
-
-    @Basic
-    @Column(name = "TXAMT2HC")
-    private BigDecimal txamt2Hc;
 
     public BigDecimal getTxamt2Hc() {
         return txamt2Hc;
@@ -1660,10 +1617,6 @@ public class CbbthdEntity {
         this.txamt2Hc = txamt2Hc;
     }
 
-    @Basic
-    @Column(name = "TXAMT3HC")
-    private BigDecimal txamt3Hc;
-
     public BigDecimal getTxamt3Hc() {
         return txamt3Hc;
     }
@@ -1671,10 +1624,6 @@ public class CbbthdEntity {
     public void setTxamt3Hc(BigDecimal txamt3Hc) {
         this.txamt3Hc = txamt3Hc;
     }
-
-    @Basic
-    @Column(name = "TXAMT4HC")
-    private BigDecimal txamt4Hc;
 
     public BigDecimal getTxamt4Hc() {
         return txamt4Hc;
@@ -1684,10 +1633,6 @@ public class CbbthdEntity {
         this.txamt4Hc = txamt4Hc;
     }
 
-    @Basic
-    @Column(name = "TXAMT5HC")
-    private BigDecimal txamt5Hc;
-
     public BigDecimal getTxamt5Hc() {
         return txamt5Hc;
     }
@@ -1695,10 +1640,6 @@ public class CbbthdEntity {
     public void setTxamt5Hc(BigDecimal txamt5Hc) {
         this.txamt5Hc = txamt5Hc;
     }
-
-    @Basic
-    @Column(name = "ACCTREC1")
-    private String acctrec1;
 
     public String getAcctrec1() {
         return acctrec1;
@@ -1708,10 +1649,6 @@ public class CbbthdEntity {
         this.acctrec1 = acctrec1;
     }
 
-    @Basic
-    @Column(name = "ACCTREC2")
-    private String acctrec2;
-
     public String getAcctrec2() {
         return acctrec2;
     }
@@ -1719,10 +1656,6 @@ public class CbbthdEntity {
     public void setAcctrec2(String acctrec2) {
         this.acctrec2 = acctrec2;
     }
-
-    @Basic
-    @Column(name = "ACCTREC3")
-    private String acctrec3;
 
     public String getAcctrec3() {
         return acctrec3;
@@ -1732,10 +1665,6 @@ public class CbbthdEntity {
         this.acctrec3 = acctrec3;
     }
 
-    @Basic
-    @Column(name = "ACCTREC4")
-    private String acctrec4;
-
     public String getAcctrec4() {
         return acctrec4;
     }
@@ -1743,10 +1672,6 @@ public class CbbthdEntity {
     public void setAcctrec4(String acctrec4) {
         this.acctrec4 = acctrec4;
     }
-
-    @Basic
-    @Column(name = "ACCTREC5")
-    private String acctrec5;
 
     public String getAcctrec5() {
         return acctrec5;
@@ -1756,10 +1681,6 @@ public class CbbthdEntity {
         this.acctrec5 = acctrec5;
     }
 
-    @Basic
-    @Column(name = "ACCTEXP1")
-    private String acctexp1;
-
     public String getAcctexp1() {
         return acctexp1;
     }
@@ -1767,10 +1688,6 @@ public class CbbthdEntity {
     public void setAcctexp1(String acctexp1) {
         this.acctexp1 = acctexp1;
     }
-
-    @Basic
-    @Column(name = "ACCTEXP2")
-    private String acctexp2;
 
     public String getAcctexp2() {
         return acctexp2;
@@ -1780,10 +1697,6 @@ public class CbbthdEntity {
         this.acctexp2 = acctexp2;
     }
 
-    @Basic
-    @Column(name = "ACCTEXP3")
-    private String acctexp3;
-
     public String getAcctexp3() {
         return acctexp3;
     }
@@ -1791,10 +1704,6 @@ public class CbbthdEntity {
     public void setAcctexp3(String acctexp3) {
         this.acctexp3 = acctexp3;
     }
-
-    @Basic
-    @Column(name = "ACCTEXP4")
-    private String acctexp4;
 
     public String getAcctexp4() {
         return acctexp4;
@@ -1804,10 +1713,6 @@ public class CbbthdEntity {
         this.acctexp4 = acctexp4;
     }
 
-    @Basic
-    @Column(name = "ACCTEXP5")
-    private String acctexp5;
-
     public String getAcctexp5() {
         return acctexp5;
     }
@@ -1815,10 +1720,6 @@ public class CbbthdEntity {
     public void setAcctexp5(String acctexp5) {
         this.acctexp5 = acctexp5;
     }
-
-    @Basic
-    @Column(name = "TXEXCLTC")
-    private BigDecimal txexcltc;
 
     public BigDecimal getTxexcltc() {
         return txexcltc;
@@ -1828,10 +1729,6 @@ public class CbbthdEntity {
         this.txexcltc = txexcltc;
     }
 
-    @Basic
-    @Column(name = "TXEXCLHC")
-    private BigDecimal txexclhc;
-
     public BigDecimal getTxexclhc() {
         return txexclhc;
     }
@@ -1839,10 +1736,6 @@ public class CbbthdEntity {
     public void setTxexclhc(BigDecimal txexclhc) {
         this.txexclhc = txexclhc;
     }
-
-    @Basic
-    @Column(name = "TXEXCLBC")
-    private BigDecimal txexclbc;
 
     public BigDecimal getTxexclbc() {
         return txexclbc;
@@ -1852,10 +1745,6 @@ public class CbbthdEntity {
         this.txexclbc = txexclbc;
     }
 
-    @Basic
-    @Column(name = "TXEXCLMC")
-    private BigDecimal txexclmc;
-
     public BigDecimal getTxexclmc() {
         return txexclmc;
     }
@@ -1863,10 +1752,6 @@ public class CbbthdEntity {
     public void setTxexclmc(BigDecimal txexclmc) {
         this.txexclmc = txexclmc;
     }
-
-    @Basic
-    @Column(name = "TXINCLTC")
-    private BigDecimal txincltc;
 
     public BigDecimal getTxincltc() {
         return txincltc;
@@ -1876,10 +1761,6 @@ public class CbbthdEntity {
         this.txincltc = txincltc;
     }
 
-    @Basic
-    @Column(name = "TXINCLHC")
-    private BigDecimal txinclhc;
-
     public BigDecimal getTxinclhc() {
         return txinclhc;
     }
@@ -1887,10 +1768,6 @@ public class CbbthdEntity {
     public void setTxinclhc(BigDecimal txinclhc) {
         this.txinclhc = txinclhc;
     }
-
-    @Basic
-    @Column(name = "TXINCLBC")
-    private BigDecimal txinclbc;
 
     public BigDecimal getTxinclbc() {
         return txinclbc;
@@ -1900,10 +1777,6 @@ public class CbbthdEntity {
         this.txinclbc = txinclbc;
     }
 
-    @Basic
-    @Column(name = "TXINCLMC")
-    private BigDecimal txinclmc;
-
     public BigDecimal getTxinclmc() {
         return txinclmc;
     }
@@ -1911,10 +1784,6 @@ public class CbbthdEntity {
     public void setTxinclmc(BigDecimal txinclmc) {
         this.txinclmc = txinclmc;
     }
-
-    @Basic
-    @Column(name = "ARAPBATCH")
-    private String arapbatch;
 
     public String getArapbatch() {
         return arapbatch;
@@ -1924,10 +1793,6 @@ public class CbbthdEntity {
         this.arapbatch = arapbatch;
     }
 
-    @Basic
-    @Column(name = "ARAPENTRY")
-    private String arapentry;
-
     public String getArapentry() {
         return arapentry;
     }
@@ -1936,45 +1801,29 @@ public class CbbthdEntity {
         this.arapentry = arapentry;
     }
 
-    @Basic
-    @Column(name = "SWCHEQUE")
-    private Short swcheque;
-
-    public Short getSwcheque() {
+    public short getSwcheque() {
         return swcheque;
     }
 
-    public void setSwcheque(Short swcheque) {
+    public void setSwcheque(short swcheque) {
         this.swcheque = swcheque;
     }
 
-    @Basic
-    @Column(name = "SWEFT")
-    private Short sweft;
-
-    public Short getSweft() {
+    public short getSweft() {
         return sweft;
     }
 
-    public void setSweft(Short sweft) {
+    public void setSweft(short sweft) {
         this.sweft = sweft;
     }
 
-    @Basic
-    @Column(name = "RXMTCHSEQ")
-    private Short rxmtchseq;
-
-    public Short getRxmtchseq() {
+    public short getRxmtchseq() {
         return rxmtchseq;
     }
 
-    public void setRxmtchseq(Short rxmtchseq) {
+    public void setRxmtchseq(short rxmtchseq) {
         this.rxmtchseq = rxmtchseq;
     }
-
-    @Basic
-    @Column(name = "RXTRNSCODE")
-    private String rxtrnscode;
 
     public String getRxtrnscode() {
         return rxtrnscode;
@@ -1984,10 +1833,6 @@ public class CbbthdEntity {
         this.rxtrnscode = rxtrnscode;
     }
 
-    @Basic
-    @Column(name = "RXCATEGORY")
-    private String rxcategory;
-
     public String getRxcategory() {
         return rxcategory;
     }
@@ -1996,33 +1841,21 @@ public class CbbthdEntity {
         this.rxcategory = rxcategory;
     }
 
-    @Basic
-    @Column(name = "REVUNIQ")
-    private Integer revuniq;
-
-    public Integer getRevuniq() {
+    public int getRevuniq() {
         return revuniq;
     }
 
-    public void setRevuniq(Integer revuniq) {
+    public void setRevuniq(int revuniq) {
         this.revuniq = revuniq;
     }
 
-    @Basic
-    @Column(name = "NEWREVUNIQ")
-    private Integer newrevuniq;
-
-    public Integer getNewrevuniq() {
+    public int getNewrevuniq() {
         return newrevuniq;
     }
 
-    public void setNewrevuniq(Integer newrevuniq) {
+    public void setNewrevuniq(int newrevuniq) {
         this.newrevuniq = newrevuniq;
     }
-
-    @Basic
-    @Column(name = "ENTEREDBY")
-    private String enteredby;
 
     public String getEnteredby() {
         return enteredby;
@@ -2036,8 +1869,8 @@ public class CbbthdEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CbbthdEntity that = (CbbthdEntity) o;
-        return Objects.equals(batchid, that.batchid) && Objects.equals(entryno, that.entryno) && Objects.equals(audtdate, that.audtdate) && Objects.equals(audttime, that.audttime) && Objects.equals(audtuser, that.audtuser) && Objects.equals(audtorg, that.audtorg) && Objects.equals(entrytype, that.entrytype) && Objects.equals(reference, that.reference) && Objects.equals(period, that.period) && Objects.equals(date, that.date) && Objects.equals(datechqprn, that.datechqprn) && Objects.equals(swchqprn, that.swchqprn) && Objects.equals(misccode, that.misccode) && Objects.equals(textdesc, that.textdesc) && Objects.equals(distcode, that.distcode) && Objects.equals(chargecode, that.chargecode) && Objects.equals(chrgamount, that.chrgamount) && Objects.equals(nodetails, that.nodetails) && Objects.equals(totamount, that.totamount) && Objects.equals(tottax, that.tottax) && Objects.equals(taxpercnt, that.taxpercnt) && Objects.equals(bk2Glcurhm, that.bk2Glcurhm) && Objects.equals(bk2Glrttyp, that.bk2Glrttyp) && Objects.equals(bk2Glcursr, that.bk2Glcursr) && Objects.equals(bk2Gldate, that.bk2Gldate) && Objects.equals(bk2Glrate, that.bk2Glrate) && Objects.equals(bk2Glsprd, that.bk2Glsprd) && Objects.equals(bk2Glop, that.bk2Glop) && Objects.equals(bk2Gldtmth, that.bk2Gldtmth) && Objects.equals(bt2Glcurhm, that.bt2Glcurhm) && Objects.equals(bt2Glrttyp, that.bt2Glrttyp) && Objects.equals(bt2Glcursr, that.bt2Glcursr) && Objects.equals(bt2Gldate, that.bt2Gldate) && Objects.equals(bt2Glrate, that.bt2Glrate) && Objects.equals(bt2Glsprd, that.bt2Glsprd) && Objects.equals(bt2Glop, that.bt2Glop) && Objects.equals(bt2Gldtmth, that.bt2Gldtmth) && Objects.equals(ms2Glcurhm, that.ms2Glcurhm) && Objects.equals(ms2Glrttyp, that.ms2Glrttyp) && Objects.equals(ms2Glcursr, that.ms2Glcursr) && Objects.equals(ms2Gldate, that.ms2Gldate) && Objects.equals(ms2Glrate, that.ms2Glrate) && Objects.equals(ms2Glsprd, that.ms2Glsprd) && Objects.equals(ms2Glop, that.ms2Glop) && Objects.equals(ms2Gldtmth, that.ms2Gldtmth) && Objects.equals(swcash, that.swcash) && Objects.equals(btchnodec, that.btchnodec) && Objects.equals(miscnodec, that.miscnodec) && Objects.equals(taxgroup, that.taxgroup) && Objects.equals(custchqno, that.custchqno) && Objects.equals(nosubdetl, that.nosubdetl) && Objects.equals(applamount, that.applamount) && Objects.equals(appldisc, that.appldisc) && Objects.equals(acctnat, that.acctnat) && Objects.equals(adjamount, that.adjamount) && Objects.equals(profileid, that.profileid) && Objects.equals(swinterco, that.swinterco) && Objects.equals(fiscyr, that.fiscyr) && Objects.equals(cctype, that.cctype) && Objects.equals(ccnumber, that.ccnumber) && Objects.equals(ccname, that.ccname) && Objects.equals(ccexp, that.ccexp) && Objects.equals(ccauthcode, that.ccauthcode) && Objects.equals(xccnumber, that.xccnumber) && Objects.equals(serial, that.serial) && Objects.equals(bankamount, that.bankamount) && Objects.equals(btchamount, that.btchamount) && Objects.equals(miscamount, that.miscamount) && Objects.equals(funcamount, that.funcamount) && Objects.equals(hdrdebit, that.hdrdebit) && Objects.equals(hdrcredit, that.hdrcredit) && Objects.equals(taxauth1, that.taxauth1) && Objects.equals(taxauth2, that.taxauth2) && Objects.equals(taxauth3, that.taxauth3) && Objects.equals(taxauth4, that.taxauth4) && Objects.equals(taxauth5, that.taxauth5) && Objects.equals(txau1Desc, that.txau1Desc) && Objects.equals(txau2Desc, that.txau2Desc) && Objects.equals(txau3Desc, that.txau3Desc) && Objects.equals(txau4Desc, that.txau4Desc) && Objects.equals(txau5Desc, that.txau5Desc) && Objects.equals(taxclass1, that.taxclass1) && Objects.equals(taxclass2, that.taxclass2) && Objects.equals(taxclass3, that.taxclass3) && Objects.equals(taxclass4, that.taxclass4) && Objects.equals(taxclass5, that.taxclass5) && Objects.equals(basetax1, that.basetax1) && Objects.equals(basetax2, that.basetax2) && Objects.equals(basetax3, that.basetax3) && Objects.equals(basetax4, that.basetax4) && Objects.equals(basetax5, that.basetax5) && Objects.equals(amttax1, that.amttax1) && Objects.equals(amttax2, that.amttax2) && Objects.equals(amttax3, that.amttax3) && Objects.equals(amttax4, that.amttax4) && Objects.equals(amttax5, that.amttax5) && Objects.equals(swtaxincl1, that.swtaxincl1) && Objects.equals(swtaxincl2, that.swtaxincl2) && Objects.equals(swtaxincl3, that.swtaxincl3) && Objects.equals(swtaxincl4, that.swtaxincl4) && Objects.equals(swtaxincl5, that.swtaxincl5) && Objects.equals(bankcode, that.bankcode) && Objects.equals(swposted, that.swposted) && Objects.equals(values, that.values) && Objects.equals(processcmd, that.processcmd) && Objects.equals(totunappl, that.totunappl) && Objects.equals(totapplamt, that.totapplamt) && Objects.equals(totappldsc, that.totappldsc) && Objects.equals(allocmode, that.allocmode) && Objects.equals(allocamt, that.allocamt) && Objects.equals(classtype, that.classtype) && Objects.equals(classaxis, that.classaxis) && Objects.equals(datalevel, that.datalevel) && Objects.equals(recxcnter, that.recxcnter) && Objects.equals(raterc, that.raterc) && Objects.equals(ratetyperc, that.ratetyperc) && Objects.equals(rateoprc, that.rateoprc) && Objects.equals(ratedaterc, that.ratedaterc) && Objects.equals(codecurnrc, that.codecurnrc) && Objects.equals(txamt1Rc, that.txamt1Rc) && Objects.equals(txamt2Rc, that.txamt2Rc) && Objects.equals(txamt3Rc, that.txamt3Rc) && Objects.equals(txamt4Rc, that.txamt4Rc) && Objects.equals(txamt5Rc, that.txamt5Rc) && Objects.equals(txtotrc, that.txtotrc) && Objects.equals(txallrc, that.txallrc) && Objects.equals(txexprc, that.txexprc) && Objects.equals(txrecrc, that.txrecrc) && Objects.equals(amtrectax, that.amtrectax) && Objects.equals(amtexptax, that.amtexptax) && Objects.equals(txbse1Hc, that.txbse1Hc) && Objects.equals(txbse2Hc, that.txbse2Hc) && Objects.equals(txbse3Hc, that.txbse3Hc) && Objects.equals(txbse4Hc, that.txbse4Hc) && Objects.equals(txbse5Hc, that.txbse5Hc) && Objects.equals(txamt1Hc, that.txamt1Hc) && Objects.equals(txamt2Hc, that.txamt2Hc) && Objects.equals(txamt3Hc, that.txamt3Hc) && Objects.equals(txamt4Hc, that.txamt4Hc) && Objects.equals(txamt5Hc, that.txamt5Hc) && Objects.equals(acctrec1, that.acctrec1) && Objects.equals(acctrec2, that.acctrec2) && Objects.equals(acctrec3, that.acctrec3) && Objects.equals(acctrec4, that.acctrec4) && Objects.equals(acctrec5, that.acctrec5) && Objects.equals(acctexp1, that.acctexp1) && Objects.equals(acctexp2, that.acctexp2) && Objects.equals(acctexp3, that.acctexp3) && Objects.equals(acctexp4, that.acctexp4) && Objects.equals(acctexp5, that.acctexp5) && Objects.equals(txexcltc, that.txexcltc) && Objects.equals(txexclhc, that.txexclhc) && Objects.equals(txexclbc, that.txexclbc) && Objects.equals(txexclmc, that.txexclmc) && Objects.equals(txincltc, that.txincltc) && Objects.equals(txinclhc, that.txinclhc) && Objects.equals(txinclbc, that.txinclbc) && Objects.equals(txinclmc, that.txinclmc) && Objects.equals(arapbatch, that.arapbatch) && Objects.equals(arapentry, that.arapentry) && Objects.equals(swcheque, that.swcheque) && Objects.equals(sweft, that.sweft) && Objects.equals(rxmtchseq, that.rxmtchseq) && Objects.equals(rxtrnscode, that.rxtrnscode) && Objects.equals(rxcategory, that.rxcategory) && Objects.equals(revuniq, that.revuniq) && Objects.equals(newrevuniq, that.newrevuniq) && Objects.equals(enteredby, that.enteredby);
+        Cbbthd cbbthd = (Cbbthd) o;
+        return audtdate == cbbthd.audtdate && audttime == cbbthd.audttime && entrytype == cbbthd.entrytype && date == cbbthd.date && datechqprn == cbbthd.datechqprn && swchqprn == cbbthd.swchqprn && nodetails == cbbthd.nodetails && bk2Gldate == cbbthd.bk2Gldate && bk2Glop == cbbthd.bk2Glop && bk2Gldtmth == cbbthd.bk2Gldtmth && bt2Gldate == cbbthd.bt2Gldate && bt2Glop == cbbthd.bt2Glop && bt2Gldtmth == cbbthd.bt2Gldtmth && ms2Gldate == cbbthd.ms2Gldate && ms2Glop == cbbthd.ms2Glop && ms2Gldtmth == cbbthd.ms2Gldtmth && swcash == cbbthd.swcash && btchnodec == cbbthd.btchnodec && miscnodec == cbbthd.miscnodec && nosubdetl == cbbthd.nosubdetl && swinterco == cbbthd.swinterco && ccexp == cbbthd.ccexp && serial == cbbthd.serial && taxclass1 == cbbthd.taxclass1 && taxclass2 == cbbthd.taxclass2 && taxclass3 == cbbthd.taxclass3 && taxclass4 == cbbthd.taxclass4 && taxclass5 == cbbthd.taxclass5 && swtaxincl1 == cbbthd.swtaxincl1 && swtaxincl2 == cbbthd.swtaxincl2 && swtaxincl3 == cbbthd.swtaxincl3 && swtaxincl4 == cbbthd.swtaxincl4 && swtaxincl5 == cbbthd.swtaxincl5 && swposted == cbbthd.swposted && values == cbbthd.values && processcmd == cbbthd.processcmd && allocmode == cbbthd.allocmode && classtype == cbbthd.classtype && classaxis == cbbthd.classaxis && datalevel == cbbthd.datalevel && recxcnter == cbbthd.recxcnter && rateoprc == cbbthd.rateoprc && ratedaterc == cbbthd.ratedaterc && swcheque == cbbthd.swcheque && sweft == cbbthd.sweft && rxmtchseq == cbbthd.rxmtchseq && revuniq == cbbthd.revuniq && newrevuniq == cbbthd.newrevuniq && Objects.equals(batchid, cbbthd.batchid) && Objects.equals(entryno, cbbthd.entryno) && Objects.equals(audtuser, cbbthd.audtuser) && Objects.equals(audtorg, cbbthd.audtorg) && Objects.equals(reference, cbbthd.reference) && Objects.equals(period, cbbthd.period) && Objects.equals(misccode, cbbthd.misccode) && Objects.equals(textdesc, cbbthd.textdesc) && Objects.equals(distcode, cbbthd.distcode) && Objects.equals(chargecode, cbbthd.chargecode) && Objects.equals(chrgamount, cbbthd.chrgamount) && Objects.equals(totamount, cbbthd.totamount) && Objects.equals(tottax, cbbthd.tottax) && Objects.equals(taxpercnt, cbbthd.taxpercnt) && Objects.equals(bk2Glcurhm, cbbthd.bk2Glcurhm) && Objects.equals(bk2Glrttyp, cbbthd.bk2Glrttyp) && Objects.equals(bk2Glcursr, cbbthd.bk2Glcursr) && Objects.equals(bk2Glrate, cbbthd.bk2Glrate) && Objects.equals(bk2Glsprd, cbbthd.bk2Glsprd) && Objects.equals(bt2Glcurhm, cbbthd.bt2Glcurhm) && Objects.equals(bt2Glrttyp, cbbthd.bt2Glrttyp) && Objects.equals(bt2Glcursr, cbbthd.bt2Glcursr) && Objects.equals(bt2Glrate, cbbthd.bt2Glrate) && Objects.equals(bt2Glsprd, cbbthd.bt2Glsprd) && Objects.equals(ms2Glcurhm, cbbthd.ms2Glcurhm) && Objects.equals(ms2Glrttyp, cbbthd.ms2Glrttyp) && Objects.equals(ms2Glcursr, cbbthd.ms2Glcursr) && Objects.equals(ms2Glrate, cbbthd.ms2Glrate) && Objects.equals(ms2Glsprd, cbbthd.ms2Glsprd) && Objects.equals(taxgroup, cbbthd.taxgroup) && Objects.equals(custchqno, cbbthd.custchqno) && Objects.equals(applamount, cbbthd.applamount) && Objects.equals(appldisc, cbbthd.appldisc) && Objects.equals(acctnat, cbbthd.acctnat) && Objects.equals(adjamount, cbbthd.adjamount) && Objects.equals(profileid, cbbthd.profileid) && Objects.equals(fiscyr, cbbthd.fiscyr) && Objects.equals(cctype, cbbthd.cctype) && Objects.equals(ccnumber, cbbthd.ccnumber) && Objects.equals(ccname, cbbthd.ccname) && Objects.equals(ccauthcode, cbbthd.ccauthcode) && Objects.equals(xccnumber, cbbthd.xccnumber) && Objects.equals(bankamount, cbbthd.bankamount) && Objects.equals(btchamount, cbbthd.btchamount) && Objects.equals(miscamount, cbbthd.miscamount) && Objects.equals(funcamount, cbbthd.funcamount) && Objects.equals(hdrdebit, cbbthd.hdrdebit) && Objects.equals(hdrcredit, cbbthd.hdrcredit) && Objects.equals(taxauth1, cbbthd.taxauth1) && Objects.equals(taxauth2, cbbthd.taxauth2) && Objects.equals(taxauth3, cbbthd.taxauth3) && Objects.equals(taxauth4, cbbthd.taxauth4) && Objects.equals(taxauth5, cbbthd.taxauth5) && Objects.equals(txau1Desc, cbbthd.txau1Desc) && Objects.equals(txau2Desc, cbbthd.txau2Desc) && Objects.equals(txau3Desc, cbbthd.txau3Desc) && Objects.equals(txau4Desc, cbbthd.txau4Desc) && Objects.equals(txau5Desc, cbbthd.txau5Desc) && Objects.equals(basetax1, cbbthd.basetax1) && Objects.equals(basetax2, cbbthd.basetax2) && Objects.equals(basetax3, cbbthd.basetax3) && Objects.equals(basetax4, cbbthd.basetax4) && Objects.equals(basetax5, cbbthd.basetax5) && Objects.equals(amttax1, cbbthd.amttax1) && Objects.equals(amttax2, cbbthd.amttax2) && Objects.equals(amttax3, cbbthd.amttax3) && Objects.equals(amttax4, cbbthd.amttax4) && Objects.equals(amttax5, cbbthd.amttax5) && Objects.equals(bankcode, cbbthd.bankcode) && Objects.equals(totunappl, cbbthd.totunappl) && Objects.equals(totapplamt, cbbthd.totapplamt) && Objects.equals(totappldsc, cbbthd.totappldsc) && Objects.equals(allocamt, cbbthd.allocamt) && Objects.equals(raterc, cbbthd.raterc) && Objects.equals(ratetyperc, cbbthd.ratetyperc) && Objects.equals(codecurnrc, cbbthd.codecurnrc) && Objects.equals(txamt1Rc, cbbthd.txamt1Rc) && Objects.equals(txamt2Rc, cbbthd.txamt2Rc) && Objects.equals(txamt3Rc, cbbthd.txamt3Rc) && Objects.equals(txamt4Rc, cbbthd.txamt4Rc) && Objects.equals(txamt5Rc, cbbthd.txamt5Rc) && Objects.equals(txtotrc, cbbthd.txtotrc) && Objects.equals(txallrc, cbbthd.txallrc) && Objects.equals(txexprc, cbbthd.txexprc) && Objects.equals(txrecrc, cbbthd.txrecrc) && Objects.equals(amtrectax, cbbthd.amtrectax) && Objects.equals(amtexptax, cbbthd.amtexptax) && Objects.equals(txbse1Hc, cbbthd.txbse1Hc) && Objects.equals(txbse2Hc, cbbthd.txbse2Hc) && Objects.equals(txbse3Hc, cbbthd.txbse3Hc) && Objects.equals(txbse4Hc, cbbthd.txbse4Hc) && Objects.equals(txbse5Hc, cbbthd.txbse5Hc) && Objects.equals(txamt1Hc, cbbthd.txamt1Hc) && Objects.equals(txamt2Hc, cbbthd.txamt2Hc) && Objects.equals(txamt3Hc, cbbthd.txamt3Hc) && Objects.equals(txamt4Hc, cbbthd.txamt4Hc) && Objects.equals(txamt5Hc, cbbthd.txamt5Hc) && Objects.equals(acctrec1, cbbthd.acctrec1) && Objects.equals(acctrec2, cbbthd.acctrec2) && Objects.equals(acctrec3, cbbthd.acctrec3) && Objects.equals(acctrec4, cbbthd.acctrec4) && Objects.equals(acctrec5, cbbthd.acctrec5) && Objects.equals(acctexp1, cbbthd.acctexp1) && Objects.equals(acctexp2, cbbthd.acctexp2) && Objects.equals(acctexp3, cbbthd.acctexp3) && Objects.equals(acctexp4, cbbthd.acctexp4) && Objects.equals(acctexp5, cbbthd.acctexp5) && Objects.equals(txexcltc, cbbthd.txexcltc) && Objects.equals(txexclhc, cbbthd.txexclhc) && Objects.equals(txexclbc, cbbthd.txexclbc) && Objects.equals(txexclmc, cbbthd.txexclmc) && Objects.equals(txincltc, cbbthd.txincltc) && Objects.equals(txinclhc, cbbthd.txinclhc) && Objects.equals(txinclbc, cbbthd.txinclbc) && Objects.equals(txinclmc, cbbthd.txinclmc) && Objects.equals(arapbatch, cbbthd.arapbatch) && Objects.equals(arapentry, cbbthd.arapentry) && Objects.equals(rxtrnscode, cbbthd.rxtrnscode) && Objects.equals(rxcategory, cbbthd.rxcategory) && Objects.equals(enteredby, cbbthd.enteredby);
     }
 
     @Override

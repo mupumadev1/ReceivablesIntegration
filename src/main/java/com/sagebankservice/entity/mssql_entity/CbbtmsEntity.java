@@ -6,17 +6,160 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import java.util.Objects;
+
+@Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Entity
-@jakarta.persistence.Table(name = "CBBTMS", schema = "dbo", catalog = "TSTDAT")
-@IdClass(com.sagebankservice.entity.mssql_entity.CbbtmsEntityPK.class)
-public class CbbtmsEntity {
+@IdClass(CbbtmsPK.class)
+public class Cbbtms {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "BATCHID")
+    @Column(name = "BATCHID", nullable = false, length = 6)
     private String batchid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "ENTRYNO", nullable = false, length = 5)
+    private String entryno;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "DETAILNO", nullable = false, length = 10)
+    private String detailno;
+    @Basic
+    @Column(name = "AUDTDATE", nullable = false, precision = 0)
+    private int audtdate;
+    @Basic
+    @Column(name = "AUDTTIME", nullable = false, precision = 0)
+    private int audttime;
+    @Basic
+    @Column(name = "AUDTUSER", nullable = false, length = 8)
+    private String audtuser;
+    @Basic
+    @Column(name = "AUDTORG", nullable = false, length = 6)
+    private String audtorg;
+    @Basic
+    @Column(name = "MISCCODE", nullable = false, length = 12)
+    private String misccode;
+    @Basic
+    @Column(name = "NAME", nullable = false, length = 60)
+    private String name;
+    @Basic
+    @Column(name = "ADDRESS1", nullable = false, length = 60)
+    private String address1;
+    @Basic
+    @Column(name = "ADDRESS2", nullable = false, length = 60)
+    private String address2;
+    @Basic
+    @Column(name = "ADDRESS3", nullable = false, length = 60)
+    private String address3;
+    @Basic
+    @Column(name = "ADDRESS4", nullable = false, length = 60)
+    private String address4;
+    @Basic
+    @Column(name = "POSTCODE", nullable = false, length = 20)
+    private String postcode;
+    @Basic
+    @Column(name = "PHONE1", nullable = false, length = 30)
+    private String phone1;
+    @Basic
+    @Column(name = "PHONE2", nullable = false, length = 30)
+    private String phone2;
+    @Basic
+    @Column(name = "FAXNUMBER", nullable = false, length = 30)
+    private String faxnumber;
+    @Basic
+    @Column(name = "CONTACT", nullable = false, length = 60)
+    private String contact;
+    @Basic
+    @Column(name = "COMMENTS", nullable = false, length = 120)
+    private String comments;
+    @Basic
+    @Column(name = "SWKEEPTOT", nullable = false)
+    private short swkeeptot;
+    @Basic
+    @Column(name = "ACCTROW", nullable = false)
+    private int acctrow;
+    @Basic
+    @Column(name = "ACCTNAME", nullable = false, length = 50)
+    private String acctname;
+    @Basic
+    @Column(name = "ACCTNO", nullable = false, length = 30)
+    private String acctno;
+    @Basic
+    @Column(name = "CITY", nullable = false, length = 30)
+    private String city;
+    @Basic
+    @Column(name = "STATE", nullable = false, length = 30)
+    private String state;
+    @Basic
+    @Column(name = "COUNTRY", nullable = false, length = 30)
+    private String country;
+    @Basic
+    @Column(name = "EMAILADDR", nullable = false, length = 50)
+    private String emailaddr;
+    @Basic
+    @Column(name = "URLADDR", nullable = false, length = 100)
+    private String urladdr;
+    @Basic
+    @Column(name = "SWAPPROVED", nullable = false)
+    private short swapproved;
+    @Basic
+    @Column(name = "EFTDESC", nullable = false, length = 50)
+    private String eftdesc;
+    @Basic
+    @Column(name = "BANKNAME", nullable = false, length = 50)
+    private String bankname;
+    @Basic
+    @Column(name = "ACCOUNT", nullable = false, length = 30)
+    private String account;
+    @Basic
+    @Column(name = "BRANCH", nullable = false, length = 20)
+    private String branch;
+    @Basic
+    @Column(name = "ACCTYPE", nullable = false)
+    private short acctype;
+    @Basic
+    @Column(name = "BANKID", nullable = false, length = 12)
+    private String bankid;
+    @Basic
+    @Column(name = "SWIFTCTY", nullable = false, length = 2)
+    private String swiftcty;
+    @Basic
+    @Column(name = "PAYDETL", nullable = false, length = 75)
+    private String paydetl;
+    @Basic
+    @Column(name = "ADDINFO1", nullable = false, length = 100)
+    private String addinfo1;
+    @Basic
+    @Column(name = "ADDINFO2", nullable = false, length = 100)
+    private String addinfo2;
+    @Basic
+    @Column(name = "COVERTYPE", nullable = false)
+    private short covertype;
+    @Basic
+    @Column(name = "COVERINFO", nullable = false, length = 75)
+    private String coverinfo;
+    @Basic
+    @Column(name = "BENCODE", nullable = false, length = 16)
+    private String bencode;
+    @Basic
+    @Column(name = "EITYPE", nullable = false)
+    private short eitype;
+    @Basic
+    @Column(name = "BOPCATG", nullable = false, length = 3)
+    private String bopcatg;
+    @Basic
+    @Column(name = "BOPREF", nullable = false, length = 24)
+    private String bopref;
+    @Basic
+    @Column(name = "BOPDESC", nullable = false, length = 150)
+    private String bopdesc;
+    @Basic
+    @Column(name = "BRN", nullable = false, length = 30)
+    private String brn;
+    @Basic
+    @Column(name = "IDN", nullable = false, length = 30)
+    private String idn;
 
     public String getBatchid() {
         return batchid;
@@ -26,11 +169,6 @@ public class CbbtmsEntity {
         this.batchid = batchid;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @jakarta.persistence.Column(name = "ENTRYNO")
-    private String entryno;
-
     public String getEntryno() {
         return entryno;
     }
@@ -38,11 +176,6 @@ public class CbbtmsEntity {
     public void setEntryno(String entryno) {
         this.entryno = entryno;
     }
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @jakarta.persistence.Column(name = "DETAILNO")
-    private String detailno;
 
     public String getDetailno() {
         return detailno;
@@ -52,33 +185,21 @@ public class CbbtmsEntity {
         this.detailno = detailno;
     }
 
-    @Basic
-    @Column(name = "AUDTDATE")
-    private Integer audtdate;
-
-    public Integer getAudtdate() {
+    public int getAudtdate() {
         return audtdate;
     }
 
-    public void setAudtdate(Integer audtdate) {
+    public void setAudtdate(int audtdate) {
         this.audtdate = audtdate;
     }
 
-    @Basic
-    @Column(name = "AUDTTIME")
-    private Integer audttime;
-
-    public Integer getAudttime() {
+    public int getAudttime() {
         return audttime;
     }
 
-    public void setAudttime(Integer audttime) {
+    public void setAudttime(int audttime) {
         this.audttime = audttime;
     }
-
-    @Basic
-    @Column(name = "AUDTUSER")
-    private String audtuser;
 
     public String getAudtuser() {
         return audtuser;
@@ -88,10 +209,6 @@ public class CbbtmsEntity {
         this.audtuser = audtuser;
     }
 
-    @Basic
-    @Column(name = "AUDTORG")
-    private String audtorg;
-
     public String getAudtorg() {
         return audtorg;
     }
@@ -99,10 +216,6 @@ public class CbbtmsEntity {
     public void setAudtorg(String audtorg) {
         this.audtorg = audtorg;
     }
-
-    @Basic
-    @Column(name = "MISCCODE")
-    private String misccode;
 
     public String getMisccode() {
         return misccode;
@@ -112,10 +225,6 @@ public class CbbtmsEntity {
         this.misccode = misccode;
     }
 
-    @Basic
-    @Column(name = "NAME")
-    private String name;
-
     public String getName() {
         return name;
     }
@@ -123,10 +232,6 @@ public class CbbtmsEntity {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Basic
-    @Column(name = "ADDRESS1")
-    private String address1;
 
     public String getAddress1() {
         return address1;
@@ -136,10 +241,6 @@ public class CbbtmsEntity {
         this.address1 = address1;
     }
 
-    @Basic
-    @Column(name = "ADDRESS2")
-    private String address2;
-
     public String getAddress2() {
         return address2;
     }
@@ -147,10 +248,6 @@ public class CbbtmsEntity {
     public void setAddress2(String address2) {
         this.address2 = address2;
     }
-
-    @Basic
-    @Column(name = "ADDRESS3")
-    private String address3;
 
     public String getAddress3() {
         return address3;
@@ -160,10 +257,6 @@ public class CbbtmsEntity {
         this.address3 = address3;
     }
 
-    @Basic
-    @Column(name = "ADDRESS4")
-    private String address4;
-
     public String getAddress4() {
         return address4;
     }
@@ -171,10 +264,6 @@ public class CbbtmsEntity {
     public void setAddress4(String address4) {
         this.address4 = address4;
     }
-
-    @Basic
-    @Column(name = "POSTCODE")
-    private String postcode;
 
     public String getPostcode() {
         return postcode;
@@ -184,10 +273,6 @@ public class CbbtmsEntity {
         this.postcode = postcode;
     }
 
-    @Basic
-    @Column(name = "PHONE1")
-    private String phone1;
-
     public String getPhone1() {
         return phone1;
     }
@@ -195,10 +280,6 @@ public class CbbtmsEntity {
     public void setPhone1(String phone1) {
         this.phone1 = phone1;
     }
-
-    @Basic
-    @Column(name = "PHONE2")
-    private String phone2;
 
     public String getPhone2() {
         return phone2;
@@ -208,10 +289,6 @@ public class CbbtmsEntity {
         this.phone2 = phone2;
     }
 
-    @Basic
-    @Column(name = "FAXNUMBER")
-    private String faxnumber;
-
     public String getFaxnumber() {
         return faxnumber;
     }
@@ -219,10 +296,6 @@ public class CbbtmsEntity {
     public void setFaxnumber(String faxnumber) {
         this.faxnumber = faxnumber;
     }
-
-    @Basic
-    @Column(name = "CONTACT")
-    private String contact;
 
     public String getContact() {
         return contact;
@@ -232,10 +305,6 @@ public class CbbtmsEntity {
         this.contact = contact;
     }
 
-    @Basic
-    @Column(name = "COMMENTS")
-    private String comments;
-
     public String getComments() {
         return comments;
     }
@@ -244,33 +313,21 @@ public class CbbtmsEntity {
         this.comments = comments;
     }
 
-    @Basic
-    @Column(name = "SWKEEPTOT")
-    private Short swkeeptot;
-
-    public Short getSwkeeptot() {
+    public short getSwkeeptot() {
         return swkeeptot;
     }
 
-    public void setSwkeeptot(Short swkeeptot) {
+    public void setSwkeeptot(short swkeeptot) {
         this.swkeeptot = swkeeptot;
     }
 
-    @Basic
-    @Column(name = "ACCTROW")
-    private Integer acctrow;
-
-    public Integer getAcctrow() {
+    public int getAcctrow() {
         return acctrow;
     }
 
-    public void setAcctrow(Integer acctrow) {
+    public void setAcctrow(int acctrow) {
         this.acctrow = acctrow;
     }
-
-    @Basic
-    @Column(name = "ACCTNAME")
-    private String acctname;
 
     public String getAcctname() {
         return acctname;
@@ -280,10 +337,6 @@ public class CbbtmsEntity {
         this.acctname = acctname;
     }
 
-    @Basic
-    @Column(name = "ACCTNO")
-    private String acctno;
-
     public String getAcctno() {
         return acctno;
     }
@@ -291,10 +344,6 @@ public class CbbtmsEntity {
     public void setAcctno(String acctno) {
         this.acctno = acctno;
     }
-
-    @Basic
-    @Column(name = "CITY")
-    private String city;
 
     public String getCity() {
         return city;
@@ -304,10 +353,6 @@ public class CbbtmsEntity {
         this.city = city;
     }
 
-    @Basic
-    @Column(name = "STATE")
-    private String state;
-
     public String getState() {
         return state;
     }
@@ -315,10 +360,6 @@ public class CbbtmsEntity {
     public void setState(String state) {
         this.state = state;
     }
-
-    @Basic
-    @Column(name = "COUNTRY")
-    private String country;
 
     public String getCountry() {
         return country;
@@ -328,10 +369,6 @@ public class CbbtmsEntity {
         this.country = country;
     }
 
-    @Basic
-    @Column(name = "EMAILADDR")
-    private String emailaddr;
-
     public String getEmailaddr() {
         return emailaddr;
     }
@@ -339,10 +376,6 @@ public class CbbtmsEntity {
     public void setEmailaddr(String emailaddr) {
         this.emailaddr = emailaddr;
     }
-
-    @Basic
-    @Column(name = "URLADDR")
-    private String urladdr;
 
     public String getUrladdr() {
         return urladdr;
@@ -352,21 +385,13 @@ public class CbbtmsEntity {
         this.urladdr = urladdr;
     }
 
-    @Basic
-    @Column(name = "SWAPPROVED")
-    private Short swapproved;
-
-    public Short getSwapproved() {
+    public short getSwapproved() {
         return swapproved;
     }
 
-    public void setSwapproved(Short swapproved) {
+    public void setSwapproved(short swapproved) {
         this.swapproved = swapproved;
     }
-
-    @Basic
-    @Column(name = "EFTDESC")
-    private String eftdesc;
 
     public String getEftdesc() {
         return eftdesc;
@@ -376,10 +401,6 @@ public class CbbtmsEntity {
         this.eftdesc = eftdesc;
     }
 
-    @Basic
-    @Column(name = "BANKNAME")
-    private String bankname;
-
     public String getBankname() {
         return bankname;
     }
@@ -387,10 +408,6 @@ public class CbbtmsEntity {
     public void setBankname(String bankname) {
         this.bankname = bankname;
     }
-
-    @Basic
-    @Column(name = "ACCOUNT")
-    private String account;
 
     public String getAccount() {
         return account;
@@ -400,10 +417,6 @@ public class CbbtmsEntity {
         this.account = account;
     }
 
-    @Basic
-    @Column(name = "BRANCH")
-    private String branch;
-
     public String getBranch() {
         return branch;
     }
@@ -412,21 +425,13 @@ public class CbbtmsEntity {
         this.branch = branch;
     }
 
-    @Basic
-    @Column(name = "ACCTYPE")
-    private Short acctype;
-
-    public Short getAcctype() {
+    public short getAcctype() {
         return acctype;
     }
 
-    public void setAcctype(Short acctype) {
+    public void setAcctype(short acctype) {
         this.acctype = acctype;
     }
-
-    @Basic
-    @Column(name = "BANKID")
-    private String bankid;
 
     public String getBankid() {
         return bankid;
@@ -436,10 +441,6 @@ public class CbbtmsEntity {
         this.bankid = bankid;
     }
 
-    @Basic
-    @Column(name = "SWIFTCTY")
-    private String swiftcty;
-
     public String getSwiftcty() {
         return swiftcty;
     }
@@ -447,10 +448,6 @@ public class CbbtmsEntity {
     public void setSwiftcty(String swiftcty) {
         this.swiftcty = swiftcty;
     }
-
-    @Basic
-    @Column(name = "PAYDETL")
-    private String paydetl;
 
     public String getPaydetl() {
         return paydetl;
@@ -460,10 +457,6 @@ public class CbbtmsEntity {
         this.paydetl = paydetl;
     }
 
-    @Basic
-    @Column(name = "ADDINFO1")
-    private String addinfo1;
-
     public String getAddinfo1() {
         return addinfo1;
     }
@@ -471,10 +464,6 @@ public class CbbtmsEntity {
     public void setAddinfo1(String addinfo1) {
         this.addinfo1 = addinfo1;
     }
-
-    @Basic
-    @Column(name = "ADDINFO2")
-    private String addinfo2;
 
     public String getAddinfo2() {
         return addinfo2;
@@ -484,21 +473,13 @@ public class CbbtmsEntity {
         this.addinfo2 = addinfo2;
     }
 
-    @Basic
-    @Column(name = "COVERTYPE")
-    private Short covertype;
-
-    public Short getCovertype() {
+    public short getCovertype() {
         return covertype;
     }
 
-    public void setCovertype(Short covertype) {
+    public void setCovertype(short covertype) {
         this.covertype = covertype;
     }
-
-    @Basic
-    @Column(name = "COVERINFO")
-    private String coverinfo;
 
     public String getCoverinfo() {
         return coverinfo;
@@ -508,10 +489,6 @@ public class CbbtmsEntity {
         this.coverinfo = coverinfo;
     }
 
-    @Basic
-    @Column(name = "BENCODE")
-    private String bencode;
-
     public String getBencode() {
         return bencode;
     }
@@ -520,21 +497,13 @@ public class CbbtmsEntity {
         this.bencode = bencode;
     }
 
-    @Basic
-    @Column(name = "EITYPE")
-    private Short eitype;
-
-    public Short getEitype() {
+    public short getEitype() {
         return eitype;
     }
 
-    public void setEitype(Short eitype) {
+    public void setEitype(short eitype) {
         this.eitype = eitype;
     }
-
-    @Basic
-    @Column(name = "BOPCATG")
-    private String bopcatg;
 
     public String getBopcatg() {
         return bopcatg;
@@ -544,10 +513,6 @@ public class CbbtmsEntity {
         this.bopcatg = bopcatg;
     }
 
-    @Basic
-    @Column(name = "BOPREF")
-    private String bopref;
-
     public String getBopref() {
         return bopref;
     }
@@ -555,10 +520,6 @@ public class CbbtmsEntity {
     public void setBopref(String bopref) {
         this.bopref = bopref;
     }
-
-    @Basic
-    @Column(name = "BOPDESC")
-    private String bopdesc;
 
     public String getBopdesc() {
         return bopdesc;
@@ -568,10 +529,6 @@ public class CbbtmsEntity {
         this.bopdesc = bopdesc;
     }
 
-    @Basic
-    @Column(name = "BRN")
-    private String brn;
-
     public String getBrn() {
         return brn;
     }
@@ -579,10 +536,6 @@ public class CbbtmsEntity {
     public void setBrn(String brn) {
         this.brn = brn;
     }
-
-    @Basic
-    @Column(name = "IDN")
-    private String idn;
 
     public String getIdn() {
         return idn;
@@ -596,8 +549,8 @@ public class CbbtmsEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CbbtmsEntity that = (CbbtmsEntity) o;
-        return Objects.equals(batchid, that.batchid) && Objects.equals(entryno, that.entryno) && Objects.equals(detailno, that.detailno) && Objects.equals(audtdate, that.audtdate) && Objects.equals(audttime, that.audttime) && Objects.equals(audtuser, that.audtuser) && Objects.equals(audtorg, that.audtorg) && Objects.equals(misccode, that.misccode) && Objects.equals(name, that.name) && Objects.equals(address1, that.address1) && Objects.equals(address2, that.address2) && Objects.equals(address3, that.address3) && Objects.equals(address4, that.address4) && Objects.equals(postcode, that.postcode) && Objects.equals(phone1, that.phone1) && Objects.equals(phone2, that.phone2) && Objects.equals(faxnumber, that.faxnumber) && Objects.equals(contact, that.contact) && Objects.equals(comments, that.comments) && Objects.equals(swkeeptot, that.swkeeptot) && Objects.equals(acctrow, that.acctrow) && Objects.equals(acctname, that.acctname) && Objects.equals(acctno, that.acctno) && Objects.equals(city, that.city) && Objects.equals(state, that.state) && Objects.equals(country, that.country) && Objects.equals(emailaddr, that.emailaddr) && Objects.equals(urladdr, that.urladdr) && Objects.equals(swapproved, that.swapproved) && Objects.equals(eftdesc, that.eftdesc) && Objects.equals(bankname, that.bankname) && Objects.equals(account, that.account) && Objects.equals(branch, that.branch) && Objects.equals(acctype, that.acctype) && Objects.equals(bankid, that.bankid) && Objects.equals(swiftcty, that.swiftcty) && Objects.equals(paydetl, that.paydetl) && Objects.equals(addinfo1, that.addinfo1) && Objects.equals(addinfo2, that.addinfo2) && Objects.equals(covertype, that.covertype) && Objects.equals(coverinfo, that.coverinfo) && Objects.equals(bencode, that.bencode) && Objects.equals(eitype, that.eitype) && Objects.equals(bopcatg, that.bopcatg) && Objects.equals(bopref, that.bopref) && Objects.equals(bopdesc, that.bopdesc) && Objects.equals(brn, that.brn) && Objects.equals(idn, that.idn);
+        Cbbtms cbbtms = (Cbbtms) o;
+        return audtdate == cbbtms.audtdate && audttime == cbbtms.audttime && swkeeptot == cbbtms.swkeeptot && acctrow == cbbtms.acctrow && swapproved == cbbtms.swapproved && acctype == cbbtms.acctype && covertype == cbbtms.covertype && eitype == cbbtms.eitype && Objects.equals(batchid, cbbtms.batchid) && Objects.equals(entryno, cbbtms.entryno) && Objects.equals(detailno, cbbtms.detailno) && Objects.equals(audtuser, cbbtms.audtuser) && Objects.equals(audtorg, cbbtms.audtorg) && Objects.equals(misccode, cbbtms.misccode) && Objects.equals(name, cbbtms.name) && Objects.equals(address1, cbbtms.address1) && Objects.equals(address2, cbbtms.address2) && Objects.equals(address3, cbbtms.address3) && Objects.equals(address4, cbbtms.address4) && Objects.equals(postcode, cbbtms.postcode) && Objects.equals(phone1, cbbtms.phone1) && Objects.equals(phone2, cbbtms.phone2) && Objects.equals(faxnumber, cbbtms.faxnumber) && Objects.equals(contact, cbbtms.contact) && Objects.equals(comments, cbbtms.comments) && Objects.equals(acctname, cbbtms.acctname) && Objects.equals(acctno, cbbtms.acctno) && Objects.equals(city, cbbtms.city) && Objects.equals(state, cbbtms.state) && Objects.equals(country, cbbtms.country) && Objects.equals(emailaddr, cbbtms.emailaddr) && Objects.equals(urladdr, cbbtms.urladdr) && Objects.equals(eftdesc, cbbtms.eftdesc) && Objects.equals(bankname, cbbtms.bankname) && Objects.equals(account, cbbtms.account) && Objects.equals(branch, cbbtms.branch) && Objects.equals(bankid, cbbtms.bankid) && Objects.equals(swiftcty, cbbtms.swiftcty) && Objects.equals(paydetl, cbbtms.paydetl) && Objects.equals(addinfo1, cbbtms.addinfo1) && Objects.equals(addinfo2, cbbtms.addinfo2) && Objects.equals(coverinfo, cbbtms.coverinfo) && Objects.equals(bencode, cbbtms.bencode) && Objects.equals(bopcatg, cbbtms.bopcatg) && Objects.equals(bopref, cbbtms.bopref) && Objects.equals(bopdesc, cbbtms.bopdesc) && Objects.equals(brn, cbbtms.brn) && Objects.equals(idn, cbbtms.idn);
     }
 
     @Override
