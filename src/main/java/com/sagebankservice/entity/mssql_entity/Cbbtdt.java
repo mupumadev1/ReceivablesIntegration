@@ -1,11 +1,17 @@
 package com.sagebankservice.entity.mssql_entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @IdClass(CbbtdtPK.class)
 public class Cbbtdt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
