@@ -1,5 +1,6 @@
 package com.sagebankservice.dto;
 
+
 public class TransactionResponse {
     private int ResponseCode;
 

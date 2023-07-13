@@ -20,7 +20,6 @@ import java.util.Objects;
 public class Controller {
     private HttpServletRequest request;
     private final JavaMailSender mailSender;
-    private final TransactionResponse transactionResponse;
     private String getClientIp() {
 
         String remoteAddr = "";
@@ -39,6 +38,7 @@ public class Controller {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public TransactionResponse postTransaction(@RequestBody Transactions transactions){
+        TransactionResponse transactionResponse = new TransactionResponse();
         try {
             if (!Objects.equals(transactions.getId(), "")) {
                 if (!Objects.equals(transactions.getName(), "")){

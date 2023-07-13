@@ -8,164 +8,164 @@ import java.util.Objects;
 public class Cboptio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "OPTIONID", nullable = false, length = 4)
+    @Column(name = "OPTIONID")
     private String optionid;
     @Basic
-    @Column(name = "AUDTDATE", nullable = false, precision = 0)
-    private int audtdate;
+    @Column(name = "AUDTDATE")
+    private Integer audtdate;
     @Basic
-    @Column(name = "AUDTTIME", nullable = false, precision = 0)
-    private int audttime;
+    @Column(name = "AUDTTIME")
+    private Integer audttime;
     @Basic
-    @Column(name = "AUDTUSER", nullable = false, length = 8)
+    @Column(name = "AUDTUSER")
     private String audtuser;
     @Basic
-    @Column(name = "AUDTORG", nullable = false, length = 6)
+    @Column(name = "AUDTORG")
     private String audtorg;
     @Basic
-    @Column(name = "TRNSFRGL", nullable = false)
-    private short trnsfrgl;
+    @Column(name = "TRNSFRGL")
+    private Short trnsfrgl;
     @Basic
-    @Column(name = "CONSOLDATE", nullable = false)
-    private short consoldate;
+    @Column(name = "CONSOLDATE")
+    private Short consoldate;
     @Basic
-    @Column(name = "DEFBANK", nullable = false, length = 12)
+    @Column(name = "DEFBANK")
     private String defbank;
     @Basic
-    @Column(name = "NBTCHNUM", nullable = false)
-    private int nbtchnum;
+    @Column(name = "NBTCHNUM")
+    private Integer nbtchnum;
     @Basic
-    @Column(name = "NPSTSEQN", nullable = false)
-    private int npstseqn;
+    @Column(name = "NPSTSEQN")
+    private Integer npstseqn;
     @Basic
-    @Column(name = "CURYEAR", nullable = false, length = 4)
+    @Column(name = "CURYEAR")
     private String curyear;
     @Basic
-    @Column(name = "GLSEQN", nullable = false)
-    private int glseqn;
+    @Column(name = "GLSEQN")
+    private Integer glseqn;
     @Basic
-    @Column(name = "GLCONSOLN", nullable = false)
-    private int glconsoln;
+    @Column(name = "GLCONSOLN")
+    private Integer glconsoln;
     @Basic
-    @Column(name = "CFBTCHCRTE", nullable = false)
-    private short cfbtchcrte;
+    @Column(name = "CFBTCHCRTE")
+    private Short cfbtchcrte;
     @Basic
-    @Column(name = "TAXTYPE", nullable = false)
-    private short taxtype;
+    @Column(name = "TAXTYPE")
+    private Short taxtype;
     @Basic
-    @Column(name = "HISTDAYS", nullable = false)
-    private int histdays;
+    @Column(name = "HISTDAYS")
+    private Integer histdays;
     @Basic
-    @Column(name = "APPNTOBTCH", nullable = false)
-    private short appntobtch;
+    @Column(name = "APPNTOBTCH")
+    private Short appntobtch;
     @Basic
-    @Column(name = "HISTTBLDYS", nullable = false)
-    private int histtbldys;
+    @Column(name = "HISTTBLDYS")
+    private Integer histtbldys;
     @Basic
-    @Column(name = "FRCBTCHLST", nullable = false)
-    private short frcbtchlst;
+    @Column(name = "FRCBTCHLST")
+    private Short frcbtchlst;
     @Basic
-    @Column(name = "AUTOPOSTAP", nullable = false)
-    private short autopostap;
+    @Column(name = "AUTOPOSTAP")
+    private Short autopostap;
     @Basic
-    @Column(name = "AUTOPOSTAR", nullable = false)
-    private short autopostar;
+    @Column(name = "AUTOPOSTAR")
+    private Short autopostar;
     @Basic
-    @Column(name = "SWCHKDUP", nullable = false)
-    private short swchkdup;
+    @Column(name = "SWCHKDUP")
+    private Short swchkdup;
     @Basic
-    @Column(name = "AUTOPOSTGL", nullable = false)
-    private short autopostgl;
+    @Column(name = "AUTOPOSTGL")
+    private Short autopostgl;
     @Basic
-    @Column(name = "SWEDITRTRV", nullable = false)
-    private short sweditrtrv;
+    @Column(name = "SWEDITRTRV")
+    private Short sweditrtrv;
     @Basic
-    @Column(name = "DFTAXGROUP", nullable = false, length = 12)
+    @Column(name = "DFTAXGROUP")
     private String dftaxgroup;
     @Basic
-    @Column(name = "DFCLASSTYP", nullable = false)
-    private short dfclasstyp;
+    @Column(name = "DFCLASSTYP")
+    private Short dfclasstyp;
     @Basic
-    @Column(name = "SWWARNDATE", nullable = false)
-    private short swwarndate;
+    @Column(name = "SWWARNDATE")
+    private Short swwarndate;
     @Basic
-    @Column(name = "APSRCECODE", nullable = false, length = 4)
+    @Column(name = "APSRCECODE")
     private String apsrcecode;
     @Basic
-    @Column(name = "ARSRCECODE", nullable = false, length = 4)
+    @Column(name = "ARSRCECODE")
     private String arsrcecode;
     @Basic
-    @Column(name = "PRSRCECODE", nullable = false, length = 4)
+    @Column(name = "PRSRCECODE")
     private String prsrcecode;
     @Basic
-    @Column(name = "SWAPVOID", nullable = false)
-    private short swapvoid;
+    @Column(name = "SWAPVOID")
+    private Short swapvoid;
     @Basic
-    @Column(name = "SWAPALIGN", nullable = false)
-    private short swapalign;
+    @Column(name = "SWAPALIGN")
+    private Short swapalign;
     @Basic
-    @Column(name = "SWAPSINGLE", nullable = false)
-    private short swapsingle;
+    @Column(name = "SWAPSINGLE")
+    private Short swapsingle;
     @Basic
-    @Column(name = "SWAPEFTBTH", nullable = false)
-    private short swapeftbth;
+    @Column(name = "SWAPEFTBTH")
+    private Short swapeftbth;
     @Basic
-    @Column(name = "SWARDPOSIT", nullable = false)
-    private short swardposit;
+    @Column(name = "SWARDPOSIT")
+    private Short swardposit;
     @Basic
-    @Column(name = "SWPOSTRTAR", nullable = false)
-    private short swpostrtar;
+    @Column(name = "SWPOSTRTAR")
+    private Short swpostrtar;
     @Basic
-    @Column(name = "SWPOSTRTAP", nullable = false)
-    private short swpostrtap;
+    @Column(name = "SWPOSTRTAP")
+    private Short swpostrtap;
     @Basic
-    @Column(name = "SWPOSTRTRX", nullable = false)
-    private short swpostrtrx;
+    @Column(name = "SWPOSTRTRX")
+    private Short swpostrtrx;
     @Basic
-    @Column(name = "AUTOPOSTPM", nullable = false)
-    private short autopostpm;
+    @Column(name = "AUTOPOSTPM")
+    private Short autopostpm;
     @Basic
-    @Column(name = "APEFTPAYM", nullable = false, length = 12)
+    @Column(name = "APEFTPAYM")
     private String apeftpaym;
     @Basic
-    @Column(name = "SWAPREADY", nullable = false)
-    private short swapready;
+    @Column(name = "SWAPREADY")
+    private Short swapready;
     @Basic
-    @Column(name = "SWARREADY", nullable = false)
-    private short swarready;
+    @Column(name = "SWARREADY")
+    private Short swarready;
     @Basic
-    @Column(name = "SWARREFUND", nullable = false)
-    private short swarrefund;
+    @Column(name = "SWARREFUND")
+    private Short swarrefund;
     @Basic
-    @Column(name = "SWRETRVOE", nullable = false)
-    private short swretrvoe;
+    @Column(name = "SWRETRVOE")
+    private Short swretrvoe;
     @Basic
-    @Column(name = "SWRETRVOT", nullable = false)
-    private short swretrvot;
+    @Column(name = "SWRETRVOT")
+    private Short swretrvot;
     @Basic
-    @Column(name = "SWRETRVAR", nullable = false)
-    private short swretrvar;
+    @Column(name = "SWRETRVAR")
+    private Short swretrvar;
     @Basic
-    @Column(name = "SWRETRVAP", nullable = false)
-    private short swretrvap;
+    @Column(name = "SWRETRVAP")
+    private Short swretrvap;
     @Basic
-    @Column(name = "SWAPPNDEFT", nullable = false)
-    private short swappndeft;
+    @Column(name = "SWAPPNDEFT")
+    private Short swappndeft;
     @Basic
-    @Column(name = "OTSRCEAPPL", nullable = false, length = 2)
+    @Column(name = "OTSRCEAPPL")
     private String otsrceappl;
     @Basic
-    @Column(name = "LSTRTVDATE", nullable = false, precision = 0)
-    private int lstrtvdate;
+    @Column(name = "LSTRTVDATE")
+    private Integer lstrtvdate;
     @Basic
-    @Column(name = "RECXVERNO", nullable = false)
-    private short recxverno;
+    @Column(name = "RECXVERNO")
+    private Short recxverno;
     @Basic
-    @Column(name = "EFTVERNO", nullable = false)
-    private short eftverno;
+    @Column(name = "EFTVERNO")
+    private Short eftverno;
     @Basic
-    @Column(name = "SWEFTLOCK", nullable = false)
-    private short sweftlock;
+    @Column(name = "SWEFTLOCK")
+    private Short sweftlock;
 
     public String getOptionid() {
         return optionid;
@@ -175,19 +175,19 @@ public class Cboptio {
         this.optionid = optionid;
     }
 
-    public int getAudtdate() {
+    public Integer getAudtdate() {
         return audtdate;
     }
 
-    public void setAudtdate(int audtdate) {
+    public void setAudtdate(Integer audtdate) {
         this.audtdate = audtdate;
     }
 
-    public int getAudttime() {
+    public Integer getAudttime() {
         return audttime;
     }
 
-    public void setAudttime(int audttime) {
+    public void setAudttime(Integer audttime) {
         this.audttime = audttime;
     }
 
@@ -207,19 +207,19 @@ public class Cboptio {
         this.audtorg = audtorg;
     }
 
-    public short getTrnsfrgl() {
+    public Short getTrnsfrgl() {
         return trnsfrgl;
     }
 
-    public void setTrnsfrgl(short trnsfrgl) {
+    public void setTrnsfrgl(Short trnsfrgl) {
         this.trnsfrgl = trnsfrgl;
     }
 
-    public short getConsoldate() {
+    public Short getConsoldate() {
         return consoldate;
     }
 
-    public void setConsoldate(short consoldate) {
+    public void setConsoldate(Short consoldate) {
         this.consoldate = consoldate;
     }
 
@@ -231,19 +231,19 @@ public class Cboptio {
         this.defbank = defbank;
     }
 
-    public int getNbtchnum() {
+    public Integer getNbtchnum() {
         return nbtchnum;
     }
 
-    public void setNbtchnum(int nbtchnum) {
+    public void setNbtchnum(Integer nbtchnum) {
         this.nbtchnum = nbtchnum;
     }
 
-    public int getNpstseqn() {
+    public Integer getNpstseqn() {
         return npstseqn;
     }
 
-    public void setNpstseqn(int npstseqn) {
+    public void setNpstseqn(Integer npstseqn) {
         this.npstseqn = npstseqn;
     }
 
@@ -255,107 +255,107 @@ public class Cboptio {
         this.curyear = curyear;
     }
 
-    public int getGlseqn() {
+    public Integer getGlseqn() {
         return glseqn;
     }
 
-    public void setGlseqn(int glseqn) {
+    public void setGlseqn(Integer glseqn) {
         this.glseqn = glseqn;
     }
 
-    public int getGlconsoln() {
+    public Integer getGlconsoln() {
         return glconsoln;
     }
 
-    public void setGlconsoln(int glconsoln) {
+    public void setGlconsoln(Integer glconsoln) {
         this.glconsoln = glconsoln;
     }
 
-    public short getCfbtchcrte() {
+    public Short getCfbtchcrte() {
         return cfbtchcrte;
     }
 
-    public void setCfbtchcrte(short cfbtchcrte) {
+    public void setCfbtchcrte(Short cfbtchcrte) {
         this.cfbtchcrte = cfbtchcrte;
     }
 
-    public short getTaxtype() {
+    public Short getTaxtype() {
         return taxtype;
     }
 
-    public void setTaxtype(short taxtype) {
+    public void setTaxtype(Short taxtype) {
         this.taxtype = taxtype;
     }
 
-    public int getHistdays() {
+    public Integer getHistdays() {
         return histdays;
     }
 
-    public void setHistdays(int histdays) {
+    public void setHistdays(Integer histdays) {
         this.histdays = histdays;
     }
 
-    public short getAppntobtch() {
+    public Short getAppntobtch() {
         return appntobtch;
     }
 
-    public void setAppntobtch(short appntobtch) {
+    public void setAppntobtch(Short appntobtch) {
         this.appntobtch = appntobtch;
     }
 
-    public int getHisttbldys() {
+    public Integer getHisttbldys() {
         return histtbldys;
     }
 
-    public void setHisttbldys(int histtbldys) {
+    public void setHisttbldys(Integer histtbldys) {
         this.histtbldys = histtbldys;
     }
 
-    public short getFrcbtchlst() {
+    public Short getFrcbtchlst() {
         return frcbtchlst;
     }
 
-    public void setFrcbtchlst(short frcbtchlst) {
+    public void setFrcbtchlst(Short frcbtchlst) {
         this.frcbtchlst = frcbtchlst;
     }
 
-    public short getAutopostap() {
+    public Short getAutopostap() {
         return autopostap;
     }
 
-    public void setAutopostap(short autopostap) {
+    public void setAutopostap(Short autopostap) {
         this.autopostap = autopostap;
     }
 
-    public short getAutopostar() {
+    public Short getAutopostar() {
         return autopostar;
     }
 
-    public void setAutopostar(short autopostar) {
+    public void setAutopostar(Short autopostar) {
         this.autopostar = autopostar;
     }
 
-    public short getSwchkdup() {
+    public Short getSwchkdup() {
         return swchkdup;
     }
 
-    public void setSwchkdup(short swchkdup) {
+    public void setSwchkdup(Short swchkdup) {
         this.swchkdup = swchkdup;
     }
 
-    public short getAutopostgl() {
+    public Short getAutopostgl() {
         return autopostgl;
     }
 
-    public void setAutopostgl(short autopostgl) {
+    public void setAutopostgl(Short autopostgl) {
         this.autopostgl = autopostgl;
     }
 
-    public short getSweditrtrv() {
+    public Short getSweditrtrv() {
         return sweditrtrv;
     }
 
-    public void setSweditrtrv(short sweditrtrv) {
+    public void setSweditrtrv(Short sweditrtrv) {
         this.sweditrtrv = sweditrtrv;
     }
 
@@ -367,19 +367,19 @@ public class Cboptio {
         this.dftaxgroup = dftaxgroup;
     }
 
-    public short getDfclasstyp() {
+    public Short getDfclasstyp() {
         return dfclasstyp;
     }
 
-    public void setDfclasstyp(short dfclasstyp) {
+    public void setDfclasstyp(Short dfclasstyp) {
         this.dfclasstyp = dfclasstyp;
     }
 
-    public short getSwwarndate() {
+    public Short getSwwarndate() {
         return swwarndate;
     }
 
-    public void setSwwarndate(short swwarndate) {
+    public void setSwwarndate(Short swwarndate) {
         this.swwarndate = swwarndate;
     }
 
@@ -407,75 +407,75 @@ public class Cboptio {
         this.prsrcecode = prsrcecode;
     }
 
-    public short getSwapvoid() {
+    public Short getSwapvoid() {
         return swapvoid;
     }
 
-    public void setSwapvoid(short swapvoid) {
+    public void setSwapvoid(Short swapvoid) {
         this.swapvoid = swapvoid;
     }
 
-    public short getSwapalign() {
+    public Short getSwapalign() {
         return swapalign;
     }
 
-    public void setSwapalign(short swapalign) {
+    public void setSwapalign(Short swapalign) {
         this.swapalign = swapalign;
     }
 
-    public short getSwapsingle() {
+    public Short getSwapsingle() {
         return swapsingle;
     }
 
-    public void setSwapsingle(short swapsingle) {
+    public void setSwapsingle(Short swapsingle) {
         this.swapsingle = swapsingle;
     }
 
-    public short getSwapeftbth() {
+    public Short getSwapeftbth() {
         return swapeftbth;
     }
 
-    public void setSwapeftbth(short swapeftbth) {
+    public void setSwapeftbth(Short swapeftbth) {
         this.swapeftbth = swapeftbth;
     }
 
-    public short getSwardposit() {
+    public Short getSwardposit() {
         return swardposit;
     }
 
-    public void setSwardposit(short swardposit) {
+    public void setSwardposit(Short swardposit) {
         this.swardposit = swardposit;
     }
 
-    public short getSwpostrtar() {
+    public Short getSwpostrtar() {
         return swpostrtar;
     }
 
-    public void setSwpostrtar(short swpostrtar) {
+    public void setSwpostrtar(Short swpostrtar) {
         this.swpostrtar = swpostrtar;
     }
 
-    public short getSwpostrtap() {
+    public Short getSwpostrtap() {
         return swpostrtap;
     }
 
-    public void setSwpostrtap(short swpostrtap) {
+    public void setSwpostrtap(Short swpostrtap) {
         this.swpostrtap = swpostrtap;
     }
 
-    public short getSwpostrtrx() {
+    public Short getSwpostrtrx() {
         return swpostrtrx;
     }
 
-    public void setSwpostrtrx(short swpostrtrx) {
+    public void setSwpostrtrx(Short swpostrtrx) {
         this.swpostrtrx = swpostrtrx;
     }
 
-    public short getAutopostpm() {
+    public Short getAutopostpm() {
         return autopostpm;
     }
 
-    public void setAutopostpm(short autopostpm) {
+    public void setAutopostpm(Short autopostpm) {
         this.autopostpm = autopostpm;
     }
 
@@ -487,67 +487,67 @@ public class Cboptio {
         this.apeftpaym = apeftpaym;
     }
 
-    public short getSwapready() {
+    public Short getSwapready() {
         return swapready;
     }
 
-    public void setSwapready(short swapready) {
+    public void setSwapready(Short swapready) {
         this.swapready = swapready;
     }
 
-    public short getSwarready() {
+    public Short getSwarready() {
         return swarready;
     }
 
-    public void setSwarready(short swarready) {
+    public void setSwarready(Short swarready) {
         this.swarready = swarready;
     }
 
-    public short getSwarrefund() {
+    public Short getSwarrefund() {
         return swarrefund;
     }
 
-    public void setSwarrefund(short swarrefund) {
+    public void setSwarrefund(Short swarrefund) {
         this.swarrefund = swarrefund;
     }
 
-    public short getSwretrvoe() {
+    public Short getSwretrvoe() {
         return swretrvoe;
     }
 
-    public void setSwretrvoe(short swretrvoe) {
+    public void setSwretrvoe(Short swretrvoe) {
         this.swretrvoe = swretrvoe;
     }
 
-    public short getSwretrvot() {
+    public Short getSwretrvot() {
         return swretrvot;
     }
 
-    public void setSwretrvot(short swretrvot) {
+    public void setSwretrvot(Short swretrvot) {
         this.swretrvot = swretrvot;
     }
 
-    public short getSwretrvar() {
+    public Short getSwretrvar() {
         return swretrvar;
     }
 
-    public void setSwretrvar(short swretrvar) {
+    public void setSwretrvar(Short swretrvar) {
         this.swretrvar = swretrvar;
     }
 
-    public short getSwretrvap() {
+    public Short getSwretrvap() {
         return swretrvap;
     }
 
-    public void setSwretrvap(short swretrvap) {
+    public void setSwretrvap(Short swretrvap) {
         this.swretrvap = swretrvap;
     }
 
-    public short getSwappndeft() {
+    public Short getSwappndeft() {
         return swappndeft;
     }
 
-    public void setSwappndeft(short swappndeft) {
+    public void setSwappndeft(Short swappndeft) {
         this.swappndeft = swappndeft;
     }
 
@@ -559,35 +559,35 @@ public class Cboptio {
         this.otsrceappl = otsrceappl;
     }
 
-    public int getLstrtvdate() {
+    public Integer getLstrtvdate() {
         return lstrtvdate;
     }
 
-    public void setLstrtvdate(int lstrtvdate) {
+    public void setLstrtvdate(Integer lstrtvdate) {
         this.lstrtvdate = lstrtvdate;
     }
 
-    public short getRecxverno() {
+    public Short getRecxverno() {
         return recxverno;
     }
 
-    public void setRecxverno(short recxverno) {
+    public void setRecxverno(Short recxverno) {
         this.recxverno = recxverno;
     }
 
-    public short getEftverno() {
+    public Short getEftverno() {
         return eftverno;
     }
 
-    public void setEftverno(short eftverno) {
+    public void setEftverno(Short eftverno) {
         this.eftverno = eftverno;
     }
 
-    public short getSweftlock() {
+    public Short getSweftlock() {
         return sweftlock;
     }
 
-    public void setSweftlock(short sweftlock) {
+    public void setSweftlock(Short sweftlock) {
         this.sweftlock = sweftlock;
     }
 
@@ -596,7 +596,7 @@ public class Cboptio {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cboptio cboptio = (Cboptio) o;
-        return audtdate == cboptio.audtdate && audttime == cboptio.audttime && trnsfrgl == cboptio.trnsfrgl && consoldate == cboptio.consoldate && nbtchnum == cboptio.nbtchnum && npstseqn == cboptio.npstseqn && glseqn == cboptio.glseqn && glconsoln == cboptio.glconsoln && cfbtchcrte == cboptio.cfbtchcrte && taxtype == cboptio.taxtype && histdays == cboptio.histdays && appntobtch == cboptio.appntobtch && histtbldys == cboptio.histtbldys && frcbtchlst == cboptio.frcbtchlst && autopostap == cboptio.autopostap && autopostar == cboptio.autopostar && swchkdup == cboptio.swchkdup && autopostgl == cboptio.autopostgl && sweditrtrv == cboptio.sweditrtrv && dfclasstyp == cboptio.dfclasstyp && swwarndate == cboptio.swwarndate && swapvoid == cboptio.swapvoid && swapalign == cboptio.swapalign && swapsingle == cboptio.swapsingle && swapeftbth == cboptio.swapeftbth && swardposit == cboptio.swardposit && swpostrtar == cboptio.swpostrtar && swpostrtap == cboptio.swpostrtap && swpostrtrx == cboptio.swpostrtrx && autopostpm == cboptio.autopostpm && swapready == cboptio.swapready && swarready == cboptio.swarready && swarrefund == cboptio.swarrefund && swretrvoe == cboptio.swretrvoe && swretrvot == cboptio.swretrvot && swretrvar == cboptio.swretrvar && swretrvap == cboptio.swretrvap && swappndeft == cboptio.swappndeft && lstrtvdate == cboptio.lstrtvdate && recxverno == cboptio.recxverno && eftverno == cboptio.eftverno && sweftlock == cboptio.sweftlock && Objects.equals(optionid, cboptio.optionid) && Objects.equals(audtuser, cboptio.audtuser) && Objects.equals(audtorg, cboptio.audtorg) && Objects.equals(defbank, cboptio.defbank) && Objects.equals(curyear, cboptio.curyear) && Objects.equals(dftaxgroup, cboptio.dftaxgroup) && Objects.equals(apsrcecode, cboptio.apsrcecode) && Objects.equals(arsrcecode, cboptio.arsrcecode) && Objects.equals(prsrcecode, cboptio.prsrcecode) && Objects.equals(apeftpaym, cboptio.apeftpaym) && Objects.equals(otsrceappl, cboptio.otsrceappl);
+        return Objects.equals(optionid, cboptio.optionid) && Objects.equals(audtdate, cboptio.audtdate) && Objects.equals(audttime, cboptio.audttime) && Objects.equals(audtuser, cboptio.audtuser) && Objects.equals(audtorg, cboptio.audtorg) && Objects.equals(trnsfrgl, cboptio.trnsfrgl) && Objects.equals(consoldate, cboptio.consoldate) && Objects.equals(defbank, cboptio.defbank) && Objects.equals(nbtchnum, cboptio.nbtchnum) && Objects.equals(npstseqn, cboptio.npstseqn) && Objects.equals(curyear, cboptio.curyear) && Objects.equals(glseqn, cboptio.glseqn) && Objects.equals(glconsoln, cboptio.glconsoln) && Objects.equals(cfbtchcrte, cboptio.cfbtchcrte) && Objects.equals(taxtype, cboptio.taxtype) && Objects.equals(histdays, cboptio.histdays) && Objects.equals(appntobtch, cboptio.appntobtch) && Objects.equals(histtbldys, cboptio.histtbldys) && Objects.equals(frcbtchlst, cboptio.frcbtchlst) && Objects.equals(autopostap, cboptio.autopostap) && Objects.equals(autopostar, cboptio.autopostar) && Objects.equals(swchkdup, cboptio.swchkdup) && Objects.equals(autopostgl, cboptio.autopostgl) && Objects.equals(sweditrtrv, cboptio.sweditrtrv) && Objects.equals(dftaxgroup, cboptio.dftaxgroup) && Objects.equals(dfclasstyp, cboptio.dfclasstyp) && Objects.equals(swwarndate, cboptio.swwarndate) && Objects.equals(apsrcecode, cboptio.apsrcecode) && Objects.equals(arsrcecode, cboptio.arsrcecode) && Objects.equals(prsrcecode, cboptio.prsrcecode) && Objects.equals(swapvoid, cboptio.swapvoid) && Objects.equals(swapalign, cboptio.swapalign) && Objects.equals(swapsingle, cboptio.swapsingle) && Objects.equals(swapeftbth, cboptio.swapeftbth) && Objects.equals(swardposit, cboptio.swardposit) && Objects.equals(swpostrtar, cboptio.swpostrtar) && Objects.equals(swpostrtap, cboptio.swpostrtap) && Objects.equals(swpostrtrx, cboptio.swpostrtrx) && Objects.equals(autopostpm, cboptio.autopostpm) && Objects.equals(apeftpaym, cboptio.apeftpaym) && Objects.equals(swapready, cboptio.swapready) && Objects.equals(swarready, cboptio.swarready) && Objects.equals(swarrefund, cboptio.swarrefund) && Objects.equals(swretrvoe, cboptio.swretrvoe) && Objects.equals(swretrvot, cboptio.swretrvot) && Objects.equals(swretrvar, cboptio.swretrvar) && Objects.equals(swretrvap, cboptio.swretrvap) && Objects.equals(swappndeft, cboptio.swappndeft) && Objects.equals(otsrceappl, cboptio.otsrceappl) && Objects.equals(lstrtvdate, cboptio.lstrtvdate) && Objects.equals(recxverno, cboptio.recxverno) && Objects.equals(eftverno, cboptio.eftverno) && Objects.equals(sweftlock, cboptio.sweftlock);
     }
 
     @Override

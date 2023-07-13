@@ -7,108 +7,108 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class Cbbctl {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "BATCHID", nullable = false, length = 6)
+    @Column(name = "BATCHID")
     private String batchid;
     @Basic
-    @Column(name = "AUDTDATE", nullable = false, precision = 0)
-    private int audtdate;
+    @Column(name = "AUDTDATE")
+    private Integer audtdate;
     @Basic
-    @Column(name = "AUDTTIME", nullable = false, precision = 0)
-    private int audttime;
+    @Column(name = "AUDTTIME")
+    private Integer audttime;
     @Basic
-    @Column(name = "AUDTUSER", nullable = false, length = 8)
+    @Column(name = "AUDTUSER")
     private String audtuser;
     @Basic
-    @Column(name = "AUDTORG", nullable = false, length = 6)
+    @Column(name = "AUDTORG")
     private String audtorg;
     @Basic
-    @Column(name = "BANKCODE", nullable = false, length = 12)
+    @Column(name = "BANKCODE")
     private String bankcode;
     @Basic
-    @Column(name = "ACTIVESW", nullable = false, length = 1)
+    @Column(name = "ACTIVESW")
     private String activesw;
     @Basic
-    @Column(name = "TEXTDESC", nullable = false, length = 30)
+    @Column(name = "TEXTDESC")
     private String textdesc;
     @Basic
-    @Column(name = "SRCELEDGER", nullable = false, length = 2)
+    @Column(name = "SRCELEDGER")
     private String srceledger;
     @Basic
-    @Column(name = "DATECREATE", nullable = false, precision = 0)
-    private int datecreate;
+    @Column(name = "DATECREATE")
+    private Integer datecreate;
     @Basic
-    @Column(name = "DATEEDITED", nullable = false, precision = 0)
-    private int dateedited;
+    @Column(name = "DATEEDITED")
+    private Integer dateedited;
     @Basic
-    @Column(name = "BATCHTYPE", nullable = false)
-    private short batchtype;
+    @Column(name = "BATCHTYPE")
+    private Short batchtype;
     @Basic
-    @Column(name = "ENTRYTYPE", nullable = false)
-    private short entrytype;
+    @Column(name = "ENTRYTYPE")
+    private Short entrytype;
     @Basic
-    @Column(name = "STATUS", nullable = false)
-    private short status;
+    @Column(name = "STATUS")
+    private Short status;
     @Basic
-    @Column(name = "POSTSEQ", nullable = false)
-    private int postseq;
+    @Column(name = "POSTSEQ")
+    private Integer postseq;
     @Basic
-    @Column(name = "TOTDEBIT", nullable = false, precision = 3)
+    @Column(name = "TOTDEBIT")
     private BigDecimal totdebit;
     @Basic
-    @Column(name = "TOTCREDIT", nullable = false, precision = 3)
+    @Column(name = "TOTCREDIT")
     private BigDecimal totcredit;
     @Basic
-    @Column(name = "CNTENTRY", nullable = false)
-    private int cntentry;
+    @Column(name = "CNTENTRY")
+    private Integer cntentry;
     @Basic
-    @Column(name = "NEXTENTRY", nullable = false)
-    private int nextentry;
+    @Column(name = "NEXTENTRY")
+    private Integer nextentry;
     @Basic
-    @Column(name = "CNTERROR", nullable = false)
-    private int cnterror;
+    @Column(name = "CNTERROR")
+    private Integer cnterror;
     @Basic
-    @Column(name = "BTCHDEC", nullable = false)
-    private short btchdec;
+    @Column(name = "BTCHDEC")
+    private Short btchdec;
     @Basic
-    @Column(name = "SWPRINTDEP", nullable = false)
-    private short swprintdep;
+    @Column(name = "SWPRINTDEP")
+    private Short swprintdep;
     @Basic
-    @Column(name = "DEPNO", nullable = false, length = 12)
+    @Column(name = "DEPNO")
     private String depno;
     @Basic
-    @Column(name = "DEPPREF", nullable = false, length = 2)
+    @Column(name = "DEPPREF")
     private String deppref;
     @Basic
-    @Column(name = "SWMULTLOCK", nullable = false)
-    private short swmultlock;
+    @Column(name = "SWMULTLOCK")
+    private Short swmultlock;
     @Basic
-    @Column(name = "DATEPOST", nullable = false, precision = 0)
-    private int datepost;
+    @Column(name = "DATEPOST")
+    private Integer datepost;
     @Basic
-    @Column(name = "SWTOPOST", nullable = false)
-    private short swtopost;
+    @Column(name = "SWTOPOST")
+    private Short swtopost;
     @Basic
-    @Column(name = "ADJAMOUNT", nullable = false, precision = 3)
+    @Column(name = "ADJAMOUNT")
     private BigDecimal adjamount;
     @Basic
-    @Column(name = "USERID", nullable = false, length = 8)
+    @Column(name = "USERID")
     private String userid;
     @Basic
-    @Column(name = "SINGLEREF", nullable = false)
-    private short singleref;
+    @Column(name = "SINGLEREF")
+    private Short singleref;
     @Basic
-    @Column(name = "NOEFTENTRY", nullable = false)
-    private int noeftentry;
+    @Column(name = "NOEFTENTRY")
+    private Integer noeftentry;
     @Basic
-    @Column(name = "EFTPRODATE", nullable = false, precision = 0)
-    private int eftprodate;
+    @Column(name = "EFTPRODATE")
+    private Integer eftprodate;
 
     public String getBatchid() {
         return batchid;
@@ -118,19 +118,19 @@ public class Cbbctl {
         this.batchid = batchid;
     }
 
-    public int getAudtdate() {
+    public Integer getAudtdate() {
         return audtdate;
     }
 
-    public void setAudtdate(int audtdate) {
+    public void setAudtdate(Integer audtdate) {
         this.audtdate = audtdate;
     }
 
-    public int getAudttime() {
+    public Integer getAudttime() {
         return audttime;
     }
 
-    public void setAudttime(int audttime) {
+    public void setAudttime(Integer audttime) {
         this.audttime = audttime;
     }
 
@@ -182,51 +182,51 @@ public class Cbbctl {
         this.srceledger = srceledger;
     }
 
-    public int getDatecreate() {
+    public Integer getDatecreate() {
         return datecreate;
     }
 
-    public void setDatecreate(int datecreate) {
+    public void setDatecreate(Integer datecreate) {
         this.datecreate = datecreate;
     }
 
-    public int getDateedited() {
+    public Integer getDateedited() {
         return dateedited;
     }
 
-    public void setDateedited(int dateedited) {
+    public void setDateedited(Integer dateedited) {
         this.dateedited = dateedited;
     }
 
-    public short getBatchtype() {
+    public Short getBatchtype() {
         return batchtype;
     }
 
-    public void setBatchtype(short batchtype) {
+    public void setBatchtype(Short batchtype) {
         this.batchtype = batchtype;
     }
 
-    public short getEntrytype() {
+    public Short getEntrytype() {
         return entrytype;
     }
 
-    public void setEntrytype(short entrytype) {
+    public void setEntrytype(Short entrytype) {
         this.entrytype = entrytype;
     }
 
-    public short getStatus() {
+    public Short getStatus() {
         return status;
     }
 
-    public void setStatus(short status) {
+    public void setStatus(Short status) {
         this.status = status;
     }
 
-    public int getPostseq() {
+    public Integer getPostseq() {
         return postseq;
     }
 
-    public void setPostseq(int postseq) {
+    public void setPostseq(Integer postseq) {
         this.postseq = postseq;
     }
 
@@ -246,43 +246,43 @@ public class Cbbctl {
         this.totcredit = totcredit;
     }
 
-    public int getCntentry() {
+    public Integer getCntentry() {
         return cntentry;
     }
 
-    public void setCntentry(int cntentry) {
+    public void setCntentry(Integer cntentry) {
         this.cntentry = cntentry;
     }
 
-    public int getNextentry() {
+    public Integer getNextentry() {
         return nextentry;
     }
 
-    public void setNextentry(int nextentry) {
+    public void setNextentry(Integer nextentry) {
         this.nextentry = nextentry;
     }
 
-    public int getCnterror() {
+    public Integer getCnterror() {
         return cnterror;
     }
 
-    public void setCnterror(int cnterror) {
+    public void setCnterror(Integer cnterror) {
         this.cnterror = cnterror;
     }
 
-    public short getBtchdec() {
+    public Short getBtchdec() {
         return btchdec;
     }
 
-    public void setBtchdec(short btchdec) {
+    public void setBtchdec(Short btchdec) {
         this.btchdec = btchdec;
     }
 
-    public short getSwprintdep() {
+    public Short getSwprintdep() {
         return swprintdep;
     }
 
-    public void setSwprintdep(short swprintdep) {
+    public void setSwprintdep(Short swprintdep) {
         this.swprintdep = swprintdep;
     }
 
@@ -302,27 +302,27 @@ public class Cbbctl {
         this.deppref = deppref;
     }
 
-    public short getSwmultlock() {
+    public Short getSwmultlock() {
         return swmultlock;
     }
 
-    public void setSwmultlock(short swmultlock) {
+    public void setSwmultlock(Short swmultlock) {
         this.swmultlock = swmultlock;
     }
 
-    public int getDatepost() {
+    public Integer getDatepost() {
         return datepost;
     }
 
-    public void setDatepost(int datepost) {
+    public void setDatepost(Integer datepost) {
         this.datepost = datepost;
     }
 
-    public short getSwtopost() {
+    public Short getSwtopost() {
         return swtopost;
     }
 
-    public void setSwtopost(short swtopost) {
+    public void setSwtopost(Short swtopost) {
         this.swtopost = swtopost;
     }
 
@@ -342,27 +342,27 @@ public class Cbbctl {
         this.userid = userid;
     }
 
-    public short getSingleref() {
+    public Short getSingleref() {
         return singleref;
     }
 
-    public void setSingleref(short singleref) {
+    public void setSingleref(Short singleref) {
         this.singleref = singleref;
     }
 
-    public int getNoeftentry() {
+    public Integer getNoeftentry() {
         return noeftentry;
     }
 
-    public void setNoeftentry(int noeftentry) {
+    public void setNoeftentry(Integer noeftentry) {
         this.noeftentry = noeftentry;
     }
 
-    public int getEftprodate() {
+    public Integer getEftprodate() {
         return eftprodate;
     }
 
-    public void setEftprodate(int eftprodate) {
+    public void setEftprodate(Integer eftprodate) {
         this.eftprodate = eftprodate;
     }
 
@@ -371,7 +371,7 @@ public class Cbbctl {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cbbctl cbbctl = (Cbbctl) o;
-        return audtdate == cbbctl.audtdate && audttime == cbbctl.audttime && datecreate == cbbctl.datecreate && dateedited == cbbctl.dateedited && batchtype == cbbctl.batchtype && entrytype == cbbctl.entrytype && status == cbbctl.status && postseq == cbbctl.postseq && cntentry == cbbctl.cntentry && nextentry == cbbctl.nextentry && cnterror == cbbctl.cnterror && btchdec == cbbctl.btchdec && swprintdep == cbbctl.swprintdep && swmultlock == cbbctl.swmultlock && datepost == cbbctl.datepost && swtopost == cbbctl.swtopost && singleref == cbbctl.singleref && noeftentry == cbbctl.noeftentry && eftprodate == cbbctl.eftprodate && Objects.equals(batchid, cbbctl.batchid) && Objects.equals(audtuser, cbbctl.audtuser) && Objects.equals(audtorg, cbbctl.audtorg) && Objects.equals(bankcode, cbbctl.bankcode) && Objects.equals(activesw, cbbctl.activesw) && Objects.equals(textdesc, cbbctl.textdesc) && Objects.equals(srceledger, cbbctl.srceledger) && Objects.equals(totdebit, cbbctl.totdebit) && Objects.equals(totcredit, cbbctl.totcredit) && Objects.equals(depno, cbbctl.depno) && Objects.equals(deppref, cbbctl.deppref) && Objects.equals(adjamount, cbbctl.adjamount) && Objects.equals(userid, cbbctl.userid);
+        return Objects.equals(batchid, cbbctl.batchid) && Objects.equals(audtdate, cbbctl.audtdate) && Objects.equals(audttime, cbbctl.audttime) && Objects.equals(audtuser, cbbctl.audtuser) && Objects.equals(audtorg, cbbctl.audtorg) && Objects.equals(bankcode, cbbctl.bankcode) && Objects.equals(activesw, cbbctl.activesw) && Objects.equals(textdesc, cbbctl.textdesc) && Objects.equals(srceledger, cbbctl.srceledger) && Objects.equals(datecreate, cbbctl.datecreate) && Objects.equals(dateedited, cbbctl.dateedited) && Objects.equals(batchtype, cbbctl.batchtype) && Objects.equals(entrytype, cbbctl.entrytype) && Objects.equals(status, cbbctl.status) && Objects.equals(postseq, cbbctl.postseq) && Objects.equals(totdebit, cbbctl.totdebit) && Objects.equals(totcredit, cbbctl.totcredit) && Objects.equals(cntentry, cbbctl.cntentry) && Objects.equals(nextentry, cbbctl.nextentry) && Objects.equals(cnterror, cbbctl.cnterror) && Objects.equals(btchdec, cbbctl.btchdec) && Objects.equals(swprintdep, cbbctl.swprintdep) && Objects.equals(depno, cbbctl.depno) && Objects.equals(deppref, cbbctl.deppref) && Objects.equals(swmultlock, cbbctl.swmultlock) && Objects.equals(datepost, cbbctl.datepost) && Objects.equals(swtopost, cbbctl.swtopost) && Objects.equals(adjamount, cbbctl.adjamount) && Objects.equals(userid, cbbctl.userid) && Objects.equals(singleref, cbbctl.singleref) && Objects.equals(noeftentry, cbbctl.noeftentry) && Objects.equals(eftprodate, cbbctl.eftprodate);
     }
 
     @Override
