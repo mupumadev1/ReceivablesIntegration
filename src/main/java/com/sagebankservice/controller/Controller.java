@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
+import java.util.Objects;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/postCBTxn")
@@ -38,12 +40,12 @@ public class Controller {
     @ResponseStatus(HttpStatus.OK)
     public TransactionResponse postTransaction(@RequestBody Transactions transactions){
         try {
-            if (transactions.getId() != "") {
-                if (transactions.getName() != ""){
-                    if(transactions.getTransId() != ""){
-                        if(transactions.getTransDate() != ""){
+            if (!Objects.equals(transactions.getId(), "")) {
+                if (!Objects.equals(transactions.getName(), "")){
+                    if(!Objects.equals(transactions.getTransId(), "")){
+                        if(!Objects.equals(transactions.getTransDate(), "")){
                             if (service.checkDocumentsTransactionId(transactions.getTransId())) {
-                                if (service.checkCashbookTransactionId(transactions.getTransId())) {
+                                if (service.checkCashbookTransactionId(transactions.getTransactionId())) {
                                     if (service.checkCustomerNumber(transactions.getId())) {
                                         int batch = service.getBatchID();
                                         if (service.insertCbbctl(transactions, String.valueOf(batch)) && service.insertCbbtdt(transactions, String.valueOf(batch)) && service.insertCbbthd(transactions, String.valueOf(batch))&&service.insertCbbtms(transactions, String.valueOf(batch)))

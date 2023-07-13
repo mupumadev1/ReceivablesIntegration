@@ -41,7 +41,7 @@ public class Service {
 
     public Boolean checkCashbookTransactionId(String transId) {
         String result;
-        result = String.valueOf(cbbthdRepository.findDistinctByCustchqno(transId));
+        result = String.valueOf(cbbthdRepository.findDistinctByReference(transId));
         if (result.isEmpty()) {
             return false;
         } else {
@@ -126,7 +126,7 @@ public class Service {
                 .audtuser("ADMIN")
                 .audtorg("TSTDAT")
                 .entrytype((short) 2)
-                .reference("")
+                .reference(transactions.getTransactionId())
                 .period(period)
                 .date(date)
                 .datechqprn(0)
@@ -616,7 +616,7 @@ public class Service {
                 .audtuser("ADMIN")
                 .audtorg("TSTDAT")
                 .entrytype((short) 2)
-                .reference("")
+                .reference(transactions.getTransactionId())
                 .period(period)
                 .date(date)
                 .datechqprn(0)

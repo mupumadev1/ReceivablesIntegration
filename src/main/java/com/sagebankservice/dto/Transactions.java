@@ -13,6 +13,10 @@ public class Transactions {
     private String name;
     private String id;
     private String accountNo;
+    public String transactionId;
+    private String  currency;
+    private String transId;
+    private String transDate;
     private long amount;
     private String depType;
 
@@ -57,11 +61,11 @@ public class Transactions {
     }
 
     public String getTransactionId() {
-        return TransactionId;
+        return transactionId;
     }
 
     public void setTransactionId(String transactionId) {
-        TransactionId = transactionId;
+        transactionId = transactionId;
     }
 
     public String getCurrency() {
@@ -88,8 +92,5 @@ public class Transactions {
         this.transDate = transDate;
     }
 
-    public String TransactionId;
-    private String  currency;
-    private String transId;
-    private String transDate;
+
 }
